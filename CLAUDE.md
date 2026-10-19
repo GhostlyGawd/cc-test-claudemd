@@ -82,6 +82,30 @@
 24. End every research answer with the queries run and the pages left unopened.
     Why: I can't judge coverage without seeing what was skipped.
 
+## Research: coverage of claims
+
+- Open the page behind every claim that appears in your conclusions. A claim seen only in a search snippet goes in the answer as "snippet only", never as a finding.
+  Why: snippets of forum posts were reported as facts without being read.
+
+- Stop researching only when two consecutive searches turn up no new independent source. If you stop earlier, write "Stopped on effort, not saturation" and name the next searches you would run.
+  Why: stopping while results were still new was presented as completion.
+
+- When a conclusion depends on a study or paper, read its methods and limitations. If you only read the abstract, say so and don't comment on the study's strength.
+  Why: an abstract-only read gets reported as if the study were evaluated.
+
+- If a number appears only in vendor or secondary sources, label it "vendor-reported". Run one search for a primary source (announcement, filing, official page) before reporting it.
+  Why: repeated vendor claims look like independent confirmation but aren't.
+
+- Never skip a link that is the only source for a claim in your answer. Skip others only as duplicate-origin, off-target, or cost, and list skipped links grouped by that reason.
+  Why: skipping by cost can silently drop the only evidence for a claim.
+
+- After writing any file, re-read it and confirm the content before saying it was saved.
+  Why: a write that returns no error can still be wrong or empty.
+
+- End every research answer with a "Gaps" section: claims resting on unopened sources, abstract-only reads, and the reason you stopped.
+  Why: it shows the weak spots without making you ask.
+
+
 -----
 
 ## Work log
