@@ -203,3 +203,20 @@ Unopened (search results only), by reason:
 - Duplicate or older versions: PyPI 0.x release pages, readthedocs v2-01 config file, GitHub discussion 189, Algolia/Glama MCP listings
 - Secondary: regton.com and estorefactory SP-API security write-ups, theregister.com retention article
 - Cost: Seller Authorizations FAQ, Application Authorization Limits changelog (2022), Anthropic privacy-centre ZDR articles, Anthropic Covered Models support article, Developing Desktop Applications page
+
+## Task 10: how workflows work (2026-10-19)
+Saved answer: claude-log/answers/2026-10-19-how-workflows-work.md
+
+Queries run (4):
+- Anthropic building effective agents workflows vs agents prompt chaining routing parallelization orchestrator evaluator-optimizer
+- how an LLM agent loop works tool use stop_reason tool_use tool_result Claude API agentic loop
+- agentic workflows fail in production problems error compounding cost latency when not to use agents
+- Claude Code workflows multi-agent orchestration script subagents parallel pipeline documentation
+
+Pages opened: anthropic.com/research/building-effective-agents; platform.claude.com how-tool-use-works; mirantis.com why-ai-agents-fail-in-production; code.claude.com/docs/en/agent-sdk/subagents (after four redirects between docs.claude.com, platform.claude.com and code.claude.com); code.claude.com/docs/en/workflows.
+Code run: scratchpad chain_demo.py (stubs), output quoted in the answer.
+
+Unopened (search results only), by reason:
+- Duplicate or secondary summaries: lyzr.ai, simonwillison.net, spring.io, helicone.ai, buchman.co.il, traeai, memx.app, educative.io, wikidocs, dataaspirant, team400, uniqus
+- Third-party Claude Code workflow blogs (mindstudio, morphllm, mer.vin, buildmvpfast, mcp.directory, mintlify): superseded by the official workflows page
+- Vendor failure posts (aerospike, lenshq, medium, dev.to, readwise, gitconnected): Mirantis opened as representative
