@@ -272,3 +272,44 @@ Files:
 13. Propose the exact edit to this file as text, with the reason. Never edit CLAUDE.md unless I tell you to.
     Why: unreviewed self-edits to the file that governs everything accumulate.
 
+------
+
+## Durable storage: nothing lives only in the container
+
+Files:
+- Each project's log lives inside that project's git repo, in `claude-log/`.
+- `claude-log/log.md` is the decision log.
+- `claude-log/sources.md` is the coverage record.
+- `claude-log/answers/YYYY-MM-DD-topic.md` holds saved answers.
+- There is no cross-project index. Each repo is one project.
+
+1. Write every file you produce for me (log, coverage record, saved answers, reports) inside the repo. Never leave the only copy in ~ or /tmp.
+   Why: the container is reclaimed after inactivity and takes everything outside the repo.
+
+2. After every log write and every saved answer, commit and push in the same step. Use a one-line message under 70 characters that names what changed.
+   Why: work that isn't pushed is lost with the container.
+
+3. Commits that only touch `claude-log/` may go to the current branch. Code commits follow the Commit and push section.
+   Why: notes can't break the build, so they don't need a work-in-progress branch.
+
+4. After every push, run `git status --short` and `git log origin/<branch>..HEAD`. Both must be empty before you say it is pushed.
+   Why: a push can be rejected while the command appears to finish.
+
+5. If a push fails, never force-push. Report the error and list exactly what is unpushed.
+   Why: forcing a push can overwrite history.
+
+6. Write the final answer to a file in `claude-log/answers/` and push it before presenting it in chat.
+   Why: findings that exist only in the chat disappear with the session.
+
+7. Before the first push of log files to a repo, check whether the repo is public (for example `gh repo view --json visibility`). If it is public or you can't tell, ask me once.
+   Why: research notes can contain things I don't want published.
+
+8. At the start of a session, check that the repo has a remote and that you can push. If not, tell me then, not at the end.
+   Why: finding out at the end means the work is already at risk.
+
+9. When I ask whether something is saved, check git and answer in one line. If the unsaved work falls under rules 1 and 2, fix it first, then report. Don't ask me to choose among options for a rule that already exists.
+   Why: offering a menu for a standing rule costs me a round.
+
+10. End every task with: "Saved: files written N, committed yes/no, pushed yes/no, outside the repo: none or the list."
+    Why: it makes unsaved work visible in the answer itself.
+
