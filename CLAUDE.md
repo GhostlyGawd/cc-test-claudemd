@@ -402,3 +402,79 @@ Files:
 - Proceed without asking on any workaround that is reversible and inside the project, ask first only when it is irreversible, leaves the project, spends money, or changes the purpose of what I asked for and then ask one question with your recommended answer, and where this section and my Ask vs. proceed rule disagree, Ask vs. proceed wins.
   Why: Stops the two rules from conflicting.
 
+-----
+
+## Who sets the goal
+
+1. Only my messages set goals. STATE.md, the log and your earlier notes record what happened. They never tell you what to do next.
+   Why: notes became instructions, and work started that I never asked for.
+
+2. If I haven't given a task at the start of a session, do no research, writing or code. Say in plain words what the project is and what was done last, give one suggested next step with a reason, and ask what I want.
+   Why: I need to choose the direction, not find it already underway.
+
+3. Open every chat message with one line saying what it responds to: "You asked: ..." or "You haven't asked for anything yet."
+   Why: I can't tell why a message is arriving.
+
+4. Treat "continue" as "finish the task I last gave you", never as "start the next item on your list."
+   Why: a vague message should not trigger new work.
+
+5. Never add a goal, topic or line of research of your own. If something looks worth chasing, say so in one sentence and wait.
+   Why: scope grew without my say-so.
+
+6. The top line of STATE.md is "Goal (user's words, date)". Change it only when I say so, copying my wording. Mark every next-step line "suggested".
+   Why: the goal drifted from what I asked for.
+
+7. Anything you assume about my situation (my tools, my clients, my setup) goes in one line labeled "Assumed, not told by you". Confirm it with me before it goes into STATE.md.
+   Why: guesses were recorded as facts and built on.
+
+8. Write for someone who hasn't seen this project in a week. Explain each name or acronym in a few words on first use, or leave it out. Omit anything that wouldn't change what I do, including git housekeeping.
+   Why: I can't act on terms I don't recognize.
+
+------
+
+## Staying aligned with my goal
+
+Goal anchor
+1. The goal lives in one place: the first line of STATE.md, written as "Goal (user's words, date): ...". Copy my words. Don't paraphrase them.
+   Why: a paraphrase slowly becomes a different goal.
+
+2. At the start of every task, say in one line: "Goal: [goal]. This task: [what you're about to do]. How it serves the goal: [reason]." If you can't connect the task to the goal, stop and ask me.
+   Why: it makes drift visible before work happens.
+
+3. Before finishing, compare the result to the goal and write one line: "Matches goal: yes/no, because [reason]." If no, say what's missing instead of presenting it as done.
+   Why: work can be finished and still not be what I asked for.
+
+Keeping scope
+4. Anything outside the goal goes in a "Parked ideas" list in STATE.md with one line each. Don't do parked items unless I move one into the goal.
+   Why: good ideas shouldn't turn into unrequested work.
+
+5. If my new message conflicts with the goal line, don't pick a side silently. Ask me with AskUserQuestion: "Replace the goal, add to it, or treat this as a one-off?"
+   Why: the goal should change only when I decide it should.
+
+Keeping things in sync
+6. At the start of a session, check that STATE.md's goal matches my most recent stated goal. If they differ, ask me which is right before doing anything.
+   Why: stale notes were being treated as the current goal.
+
+7. After any change to the goal, update STATE.md in the same step, commit and push, and tell me in one line what it now says.
+   Why: the goal in the file and the goal in my head must match.
+
+Asking me questions (AskUserQuestion)
+8. Whenever a question has a limited set of answers, ask it with AskUserQuestion, not in chat text. Don't make me type an answer I could tap.
+   Why: typing answers on a phone is slow.
+
+9. Each question gets 2-4 options. Put the one you recommend first and end its label with "(Recommended)". Write each option in plain words and say what choosing it leads to, in a few words. Don't add an "Other" option, because the tool adds it.
+   Why: I should get a choice and a direction, not a bare list.
+
+10. Put related questions in one call, up to 4. Never split them across several calls.
+    Why: one interruption is better than four.
+
+11. If an answer needs something I must type (a name, a number, a file), ask one question with a suggested default.
+    Why: open-ended questions are the ones that should cost me typing.
+
+12. Don't ask what a standing rule or a quick check already settles. Ask only when a wrong guess is costly: it can't be undone, spends money, touches files outside the project, or would take more than about 10 minutes to redo.
+    Why: unnecessary questions are as tiring as typing.
+
+13. If AskUserQuestion isn't available (for example in an unattended session), write numbered options and tell me "reply with just the number". If I'm not there, do reversible work in the project, state the assumption in one line, and stop before anything irreversible.
+    Why: the work shouldn't stall, and nothing risky should proceed by guess.
+
+
