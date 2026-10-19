@@ -34,3 +34,4 @@
 2026-10-19 | fact | Claude "Amazon Selling Partner" connector (claude.com listing, added Sept 2026): beta, made by Amazon, read + write tools, approve every action | page opened | open
 2026-10-19 | decision | Hold push of 96aee5b until the user makes the repo private; re-check visibility with gh api before pushing | user said they will make it private; repo still public at last check | open
 2026-10-19 | failed | Could not make the repo private: PATCH repos/GhostlyGawd/cc-test-claudemd visibility=private returned HTTP 403 "Repository settings writes are not permitted through this proxy"; user must change it in GitHub settings | gh api output | open
+2026-10-19 | decision | Pushing to the public repo: user said it is fine to be public | user instruction after the 403 on making it private; closes the push hold | closed

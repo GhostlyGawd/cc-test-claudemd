@@ -2,12 +2,12 @@
 
 Goal: research how AI is used to optimize Amazon/e-commerce listings and design an agentic listing workflow for Acadia's clients (user works at Acadia; "Crush Amazon accelerator" not yet identified).
 
-Now: waiting for the user to make the repo private; commit 96aee5b and the next log commit are local only.
+Now: pushed to public main with the user's OK; no active task.
 
-Next: re-run `gh api repos/GhostlyGawd/cc-test-claudemd --jq .private`; if true, `git fetch`, `git pull --rebase`, push, then `git status --short` and `git log origin/main..HEAD`.
+Next: confirm the Crush accelerator scope, then ask counsel about AUP s4.4/s4.6 before any cross-client design.
 
 Blockers:
-- Repo is public (checked with gh api); client-specific notes should not be pushed without the user's OK.
+- Repo is public; the user said that is fine (2026-10-19).
 - Open legal question: do Amazon AUP s4.4/s4.6 limit pooling client data across an agency's accounts?
 
 Verify:
