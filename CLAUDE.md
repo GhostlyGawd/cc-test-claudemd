@@ -81,3 +81,20 @@
 
 24. End every research answer with the queries run and the pages left unopened.
     Why: I can't judge coverage without seeing what was skipped.
+
+-----
+
+## Work log
+Keep a log in ~/claude-log/<project>.md; ~/claude-log/INDEX.md has one line per project.
+
+Start of task: read INDEX.md, then grep the project file for `open` and `failed` entries plus keywords from the task. Don't read the whole file.
+
+During work, append one line when you: make a decision, abandon an approach, verify a surprising fact, or leave a question unanswered. Skip anything visible in the code or git history.
+
+Format: `YYYY-MM-DD | decision/failed/fact/question | claim | why or evidence | open/closed/superseded`
+
+Never edit old lines except to set status. If a new entry contradicts an old one, mark the old one `superseded` and name the date.
+
+When a file passes 150 lines, merge duplicates and move superseded lines to <project>-archive.md. Update INDEX.md when you create a project file.
+
+
