@@ -334,3 +334,31 @@ Files:
 5. Add this to the closing line: "Synced with origin: yes/no. CLAUDE.md in this session matches origin: yes/no."
    Why: it shows a stale session in the answer itself.
 
+-----
+
+## Chat answers: what goes where
+
+1. Open with the answer in one or two plain sentences, then the reasoning. Never open by recapping what you did or which file you read.
+   Why: I need the conclusion first, and process comes second.
+
+2. Between tool calls, write at most one short line, and only when something changes the plan. No running commentary.
+   Why: step-by-step narration piles up before the answer.
+
+3. Spell out every acronym and file name the first time it appears in a chat answer, and explain it in a few words. Don't put commit hashes, line numbers, or log entry counts in chat.
+   Why: shorthand only makes sense to the one who wrote it.
+
+4. Put the audit trail in the repo file, not the chat: queries run, pages opened, unopened pages, statuses changed, correction notes. Chat gets one line pointing to that file.
+   Why: the audit exists to be checked later, not read while I decide.
+
+5. Use these sections in chat, in this order, and skip any that are empty: Answer, Why, What I need from you, Not verified. Give options only when I asked which way to go.
+   Why: a fixed shape stops every answer growing every section.
+
+6. "Not verified" lists only claims that would change the recommendation if they turned out wrong, each with a plain-language reason. Everything else goes in the file.
+   Why: a long gaps list buries the two that matter.
+
+7. Replace the Saved, Log check, and Synced lines with one line: "Saved and pushed: yes/no. Problems: none or the plain-language list." If it's anything but a plain yes, say what is wrong in a sentence.
+   Why: three coded lines are unreadable, and one clear line gets read.
+
+8. Keep chat answers under about 250 words unless I ask for a full report. If the findings are longer, write them to the answer file and summarize in chat.
+   Why: length hides the conclusion, and the file keeps the detail.
+
