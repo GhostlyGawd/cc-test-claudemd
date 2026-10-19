@@ -2,9 +2,9 @@
 
 Goal: research how AI is used to optimize Amazon/e-commerce listings and design an agentic listing workflow for Acadia's clients (user works at Acadia; "Crush Amazon accelerator" not yet identified).
 
-Now: waiting on the user's answer about pushing to this PUBLIC repo; the last commit is local only.
+Now: waiting for the user to make the repo private; commit 96aee5b and the next log commit are local only.
 
-Next: after the answer, `git fetch`, `git pull --rebase`, push, then run `git status --short` and `git log origin/main..HEAD`.
+Next: re-run `gh api repos/GhostlyGawd/cc-test-claudemd --jq .private`; if true, `git fetch`, `git pull --rebase`, push, then `git status --short` and `git log origin/main..HEAD`.
 
 Blockers:
 - Repo is public (checked with gh api); client-specific notes should not be pushed without the user's OK.
