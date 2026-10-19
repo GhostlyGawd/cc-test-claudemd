@@ -187,3 +187,19 @@ Unopened (search results only), by reason:
 - Duplicate or secondary: ecomcrew.com reauthorization article, ecommercebytes service-provider status article, myamazonguy/leadsie/glitter user-permission guides, syncgtm and jobrack Crush directory entries, ainfluencer Acadia review, novadata Acadia profile
 - Cost: Adweek Acadia profile (50% growth claim), techleap Crush deal item, turning-pro Crush newsletter, Brand Registry roles forum thread, Listings Items reference in zh_CN
 - Off-target: Alexa Accelerator and Louisiana/Nova Scotia "Acadia" results from the first Crush search
+
+## Task 9: Python API workflow (2026-10-19)
+Saved answer: claude-log/answers/2026-10-19-python-api-workflow.md
+
+Queries run (4):
+- python-amazon-sp-api library Listings Items Reports Notifications saleweaver multiple seller accounts refresh token
+- SP-API authorization limits private developer self-authorize number of seller accounts maximum
+- Anthropic API commercial terms data retention not used to train models zero data retention API inputs outputs
+- Amazon SP-API Python script agency multiple clients refresh tokens storage Data Protection Policy encryption credentials requirements
+
+Pages opened: developer-docs.amazon application-authorization-limits, self-authorization, guidance-to-address-key-security-controls-in-sp-api-integration, register-as-a-private-vendor; github.com/saleweaver/python-amazon-sp-api (README); python-amazon-sp-api.readthedocs.io listings_items; platform.claude.com api-and-data-retention (58.6KB, read via saved file: header, Covered Models section, feature table, FAQ lines).
+
+Unopened (search results only), by reason:
+- Duplicate or older versions: PyPI 0.x release pages, readthedocs v2-01 config file, GitHub discussion 189, Algolia/Glama MCP listings
+- Secondary: regton.com and estorefactory SP-API security write-ups, theregister.com retention article
+- Cost: Seller Authorizations FAQ, Application Authorization Limits changelog (2022), Anthropic privacy-centre ZDR articles, Anthropic Covered Models support article, Developing Desktop Applications page
