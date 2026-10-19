@@ -215,3 +215,11 @@ Keep it under 40 lines: drop finished items as you record them (keep the last 3 
 - If a request seems to need a larger change, a new feature, or a new dependency, stop, describe it in two sentences, and wait for my approval.
 
 ------
+
+## Commit and push
+- Commit after each logical change that runs, before any risky change, and before ending a session.
+- Push right after every commit: to main if the code runs, otherwise to a `wip/<topic>` branch.
+- Write messages as one line under 70 characters, starting with a verb, saying what changed and why.
+- Never commit `.env` files, keys, credentials, `node_modules`, or build output; if one is staged, unstage it and tell me.
+- If a push fails or conflicts, pull and merge, retry once, then stop and tell me; never force-push or rewrite history unless I ask.
+
