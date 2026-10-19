@@ -1,0 +1,1 @@
+- cc-test-claudemd: research on AI listing optimization for Amazon/ecommerce (2026-10-19)
