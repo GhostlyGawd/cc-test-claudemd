@@ -163,3 +163,27 @@ Unopened (search results only), by reason:
 - Duplicate or vendor roundups: supplykick.com agency AI posts, eva.guru, commerceiq.ai blog, wiseppc.com, sellerlabs multi-agent and watchdog posts, portermetrics, novadata Claude MCP guide, enterprisedna MCP directory
 - Off-target: Alexa Accelerator, Accelerate Acadia (Louisiana), Acadia University results
 - Cost: acadia.io service and blog pages (Acadia described as a growth agency only via search snippet), A+ create/edit/publish guide, Listings Items v2020-09-01 reference, SP-API analytics report type page, conductatlas Associates policy pages, Amalyze AI-and-data-use page
+
+## Task 8: Crush identification and API/policy gap closing (2026-10-19)
+Saved answer: claude-log/answers/2026-10-19-crush-and-api-gaps.md
+
+Queries run (10; the first six listed here, the last four below):
+- Acadia acquires Crush Amazon agency accelerator program Jared Belsky
+- Crush Amazon consultancy mid-market DTC brands services Amazon accelerator Crush Agency
+- Selling Partner API Search Query Performance report GET_BRAND_ANALYTICS_SEARCH_QUERY_PERFORMANCE_REPORT developer-docs.amazon.com
+- Selling Partner API Customer Feedback API product reviews topics browse node review trends role
+- Amazon SP-API agency self-authorization private application agencies managing client seller accounts developer registration
+- putListingsItem mode VALIDATION_PREVIEW listings items api reference rate limit
+- Acadia agency AI agents Amazon listing optimization proprietary AI tools retail media 2026
+- Amazon Seller Central user permissions agency access client account brand registry add agency user role limited access
+- Service Provider Registration and Role Approval Process Overview Amazon Solution Provider Portal Seller Central roles
+- Amazon Seller Central service provider authorization September 16 2026 reauthorization deadline role-based agencies
+
+Pages opened: mediapost.com Crush article; developer-docs.amazon report-type-values-analytics (SQP), customer-feedback-api, update-listings-items changelog (preview), manage-listings-issues, registering-as-a-developer, service-provider-registration-and-role-approval-process, simplified-authorization changelog; bebolddigital service-provider authorization article.
+
+Failed or unreadable (retried once where noted): acadia.io acquisition page (navigation only, retried); acadia.io listing-optimization and AI category pages (navigation only); emarketer Acadia-Crush article (403, retried earlier); lbbonline Crush article (403).
+
+Unopened (search results only), by reason:
+- Duplicate or secondary: ecomcrew.com reauthorization article, ecommercebytes service-provider status article, myamazonguy/leadsie/glitter user-permission guides, syncgtm and jobrack Crush directory entries, ainfluencer Acadia review, novadata Acadia profile
+- Cost: Adweek Acadia profile (50% growth claim), techleap Crush deal item, turning-pro Crush newsletter, Brand Registry roles forum thread, Listings Items reference in zh_CN
+- Off-target: Alexa Accelerator and Louisiana/Nova Scotia "Acadia" results from the first Crush search

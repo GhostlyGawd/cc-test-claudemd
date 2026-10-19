@@ -1,6 +1,8 @@
 # Designing an agentic listing optimization workflow for Acadia clients
 
 Date: 2026-10-19. Builds on `2026-10-19-ai-listing-optimization-research.md` in this folder.
+
+**Corrections (2026-10-19, later):** validation preview is not for production use, SQP reports cannot be scheduled, and the AUP concern is narrowed by Amazon's developer-registration docs. See `2026-10-19-crush-and-api-gaps.md`. The recommendation there supersedes this one.
 Labels: verified = I opened the source and it states this; inferred = follows from verified facts (step shown); unverified = snippet only or memory.
 
 ## Answer
