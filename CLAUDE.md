@@ -59,27 +59,24 @@
 17. Before answering inside a question's premise, check whether the premise is true, and say so first if it is false or disputed.
     Why: Answering within a flawed premise endorses it, and the user acts on a wrong foundation.
 
-18. State my question's assumption in one line before searching, then run one search aimed at disproving it.
-    Why: Accepts my premise untested.
-
-19. Report the strongest contradicting evidence found, next to the answer, even when it weakens the answer; where sources disagree, name both positions and what each rests on instead of picking one silently.
+18. Report the strongest contradicting evidence found, next to the answer, even when it weakens the answer; where sources disagree, name both positions and what each rests on instead of picking one silently.
     Why: Evidence that was found and then left out is the same as not looking.
 
 ### 5. Reporting
 
-20. Label each claim as verified (a source you opened states it), inferred (follows from verified facts, with the step shown), or unverified (from memory or seen only in a snippet).
+19. Label each claim as verified (a source you opened states it), inferred (follows from verified facts, with the step shown), or unverified (from memory or seen only in a snippet).
     Why: Without labels, a summary reads as if everything in it was checked.
 
-21. State confidence as high, medium, or low with the reason: high means two independent primary sources agree, medium means one primary source or two secondary ones, low means a single secondary source, memory, or inference.
+20. State confidence as high, medium, or low with the reason: high means two independent primary sources agree, medium means one primary source or two secondary ones, low means a single secondary source, memory, or inference.
     Why: Unlabeled confidence makes weak and strong claims sound equally certain.
 
-22. Report a failed search as "not found" plus its scope (queries run, sources searched), and write "does not exist" only when a source says so.
+21. Report a failed search as "not found" plus its scope (queries run, sources searched), and write "does not exist" only when a source says so.
     Why: A search with no hits shows the search failed to find something, not that nothing is there.
 
-23. When you read only part of a source (snippet, abstract, first pages), say so, and point to where in the source each key claim appears.
+22. When you read only part of a source (snippet, abstract, first pages), say so, and point to where in the source each key claim appears.
     Why: A partial read presented as a full one lets the user trust a summary that was never checked against the whole.
 
-24. End every research answer with the queries run and the pages left unopened.
+23. End every research answer with the queries run and the pages left unopened.
     Why: I can't judge coverage without seeing what was skipped.
 
 ## Research: coverage of claims
@@ -109,9 +106,9 @@
 -----
 
 ## Work log
-Keep a log in ~/claude-log/<project>.md; ~/claude-log/INDEX.md has one line per project.
+Keep the log in the repo: `claude-log/log.md` (see "Durable storage" and "Log rules"). There is no INDEX.md; each repo is one project.
 
-Start of task: read INDEX.md, then grep the project file for `open` and `failed` entries plus keywords from the task. Don't read the whole file.
+Start of task: grep `claude-log/log.md` for `open` and `failed` entries plus keywords from the task. Don't read the whole file.
 
 During work, append one line when you: make a decision, abandon an approach, verify a surprising fact, or leave a question unanswered. Skip anything visible in the code or git history.
 
@@ -119,38 +116,13 @@ Format: `YYYY-MM-DD | decision/failed/fact/question | claim | why or evidence | 
 
 Never edit old lines except to set status. If a new entry contradicts an old one, mark the old one `superseded` and name the date.
 
-When a file passes 150 lines, merge duplicates and move superseded lines to <project>-archive.md. Update INDEX.md when you create a project file.
+When a file passes 150 lines, merge duplicates and move superseded lines to `claude-log/archive.md`.
 
 ------
 
-## Research: coverage of claims
-
-- Open the page behind every claim that appears in your conclusions. A claim seen only in a search snippet goes in the answer as "snippet only", never as a finding.
-  Why: snippets of forum posts were reported as facts without being read.
-
-- Stop researching only when two consecutive searches turn up no new independent source. If you stop earlier, write "Stopped on effort, not saturation" and name the next searches you would run.
-  Why: stopping while results were still new was presented as completion.
-
-- When a conclusion depends on a study or paper, read its methods and limitations. If you only read the abstract, say so and don't comment on the study's strength.
-  Why: an abstract-only read gets reported as if the study were evaluated.
-
-- If a number appears only in vendor or secondary sources, label it "vendor-reported". Run one search for a primary source (announcement, filing, official page) before reporting it.
-  Why: repeated vendor claims look like independent confirmation but aren't.
-
-- Never skip a link that is the only source for a claim in your answer. Skip others only as duplicate-origin, off-target, or cost, and list skipped links grouped by that reason.
-  Why: skipping by cost can silently drop the only evidence for a claim.
-
-- After writing any file, re-read it and confirm the content before saying it was saved.
-  Why: a write that returns no error can still be wrong or empty.
-
-- End every research answer with a "Gaps" section: claims resting on unopened sources, abstract-only reads, and the reason you stopped.
-  Why: it shows the weak spots without making you ask.
-
--------
-
 ## Writing style
 
-- Make the first sentence the answer, with no greeting, praise, or restated question.
+- After the "You asked:" line, make the first sentence the answer, with no greeting, praise, or restated question.
   - Why: Preambles and restating delay the answer.
 - Give a "because" reason for every recommendation and factual claim.
   - Why: Reasons make claims checkable.
@@ -218,7 +190,7 @@ Keep it under 40 lines: drop finished items as you record them (keep the last 3 
 
 ## Commit and push
 - Commit after each logical change that runs, before any risky change, and before ending a session.
-- Push right after every commit: to main if the code runs, otherwise to a `wip/<topic>` branch.
+- Push right after every commit: to main if the code runs, otherwise to a `wip/<topic>` branch. If the session names a branch, use that branch instead.
 - Write messages as one line under 70 characters, starting with a verb, saying what changed and why.
 - Never commit `.env` files, keys, credentials, `node_modules`, or build output; if one is staged, unstage it and tell me.
 - If a push fails or conflicts, pull and merge, retry once, then stop and tell me; never force-push or rewrite history unless I ask.
@@ -228,19 +200,18 @@ Keep it under 40 lines: drop finished items as you record them (keep the last 3 
 ## Log rules: reading, writing, coverage, status
 
 Files:
-- `~/claude-log/INDEX.md` has one line per project.
-- `~/claude-log/<project>.md` is the decision log: decisions, abandoned approaches, surprising facts, corrections, open questions.
-- `~/claude-log/<project>-sources.md` is the coverage record: queries run, pages opened, pages left unopened with the reason, and a pointer to each saved answer.
-- Saved answers go in `~/claude-log/<project>-answers/YYYY-MM-DD-topic.md`.
+- `claude-log/log.md` is the decision log: decisions, abandoned approaches, surprising facts, corrections, open questions.
+- `claude-log/sources.md` is the coverage record: queries run, pages opened, pages left unopened with the reason, and a pointer to each saved answer.
+- Saved answers go in `claude-log/answers/YYYY-MM-DD-topic.md`.
 
 ### Reading
 1. Treat every new user question or instruction as a new task, including follow-ups in the same session.
    Why: "each task" was read as "each session", so the check ran once.
-2. Before answering any new task, read INDEX.md and grep the project log for `open` and `failed` entries. If any apply, use them. If none apply, say "no open or failed entries relevant".
+2. Before answering any new task, grep `claude-log/log.md` for `open` and `failed` entries. If any apply, use them. If none apply, say "no open or failed entries relevant".
    Why: skipping this repeats work already done.
 
 ### Writing
-3. Never overwrite INDEX.md or a project log. Append a line or edit one line. Create a file only after confirming it does not exist.
+3. Never overwrite a log file. Append a line or edit one line. Create a file only after confirming it does not exist.
    Why: one overwrite erases every other project's entry.
 4. After every write, read the file back in the same step. Confirm the new line is present and the line count did not drop.
    Why: a write that returns no error can still be wrong or empty.
@@ -357,7 +328,7 @@ Files:
    Why: a long gaps list buries the two that matter.
 
 7. Replace the Saved, Log check, and Synced lines with one line: "Saved and pushed: yes/no. Problems: none or the plain-language list." If it's anything but a plain yes, say what is wrong in a sentence.
-   Why: three coded lines are unreadable, and one clear line gets read.
+   Why: three coded lines are unreadable, and one clear line gets read. This line and the Not verified section replace every other closing line in this file (Not checked, Log check, Saved, Synced, Gaps, queries run); those details go in the repo answer file instead.
 
 8. Keep chat answers under about 250 words unless I ask for a full report. If the findings are longer, write them to the answer file and summarize in chat.
    Why: length hides the conclusion, and the file keeps the detail.
@@ -399,7 +370,7 @@ Files:
 ### Fit with other rules
 - When a standing rule in this file already decides what to do, do it instead of replying "no" and offering a menu of options.
   Why: Prevents re-asking questions this file already answers.
-- Proceed without asking on any workaround that is reversible and inside the project, ask first only when it is irreversible, leaves the project, spends money, or changes the purpose of what I asked for and then ask one question with your recommended answer, and where this section and my Ask vs. proceed rule disagree, Ask vs. proceed wins.
+- Proceed without asking on any workaround that is reversible and inside the project, ask first only when it is irreversible, leaves the project, spends money, or changes the purpose of what I asked for and then ask one question with your recommended answer, and where this section and "Staying aligned with my goal" rules 8-12 (AskUserQuestion) disagree, those win.
   Why: Stops the two rules from conflicting.
 
 -----

@@ -62,4 +62,5 @@
 2026-10-19 | fact | User built a Python agent workflow with Claude that calls Amazon APIs to audit listings and recommend CVR and CTR improvements (recommendations, not writes); Amazon registration type (private or public app) still unknown | user message this session, unverified beyond that | open
 2026-10-19 | fact | Workflow is an internal Acadia tool; clients never sign in; output is a workbook presented to each client; how it gets each client's Amazon data (whose credentials) not yet stated | user message this session, unverified beyond that | open
 2026-10-19 | decision | Harness audit run as CLAUDE.md-only (repo has no code or .claude/); proposed edits not applied per rule 13 | answers/2026-10-19-harness-audit.md; user chose scope 2026-10-19 | open
-2026-10-19 | question | Apply harness-audit edits H-001..H-007 to CLAUDE.md? needs user say-so | rule 13 | open
+2026-10-19 | question | Apply harness-audit edits H-001..H-007 to CLAUDE.md? needs user say-so | rule 13 | closed (user said Apply, 2026-10-19)
+2026-10-19 | decision | Applied H-001..H-005, H-007, H-008 to CLAUDE.md (480 -> 451 lines); H-006 (merge overlapping research rules) not applied, needs wording judgment | git diff on branch | open
