@@ -223,3 +223,52 @@ Keep it under 40 lines: drop finished items as you record them (keep the last 3 
 - Never commit `.env` files, keys, credentials, `node_modules`, or build output; if one is staged, unstage it and tell me.
 - If a push fails or conflicts, pull and merge, retry once, then stop and tell me; never force-push or rewrite history unless I ask.
 
+------
+
+## Log rules: reading, writing, coverage, status
+
+Files:
+- `~/claude-log/INDEX.md` has one line per project.
+- `~/claude-log/<project>.md` is the decision log: decisions, abandoned approaches, surprising facts, corrections, open questions.
+- `~/claude-log/<project>-sources.md` is the coverage record: queries run, pages opened, pages left unopened with the reason, and a pointer to each saved answer.
+- Saved answers go in `~/claude-log/<project>-answers/YYYY-MM-DD-topic.md`.
+
+### Reading
+1. Treat every new user question or instruction as a new task, including follow-ups in the same session.
+   Why: "each task" was read as "each session", so the check ran once.
+2. Before answering any new task, read INDEX.md and grep the project log for `open` and `failed` entries. If any apply, use them. If none apply, say "no open or failed entries relevant".
+   Why: skipping this repeats work already done.
+
+### Writing
+3. Never overwrite INDEX.md or a project log. Append a line or edit one line. Create a file only after confirming it does not exist.
+   Why: one overwrite erases every other project's entry.
+4. After every write, read the file back in the same step. Confirm the new line is present and the line count did not drop.
+   Why: a write that returns no error can still be wrong or empty.
+5. Write an entry whenever you correct or retract something you said earlier, label a claim unverified, or leave a conflict between sources unresolved.
+   Why: corrections and open conflicts were left out of the log.
+6. Write an entry when you make a decision, abandon an approach, verify a surprising fact, or leave a question unanswered.
+   Why: these are the entries a later session needs.
+
+### Coverage record
+7. For every research task, record the queries run, pages opened, pages left unopened with the reason, and the path of the saved answer. Save the final answer as a dated file.
+   Why: with only the files, someone must be able to reproduce what was covered.
+8. Write the coverage record as you work, not after. If the session ends early, it still shows how far you got.
+   Why: reconstructing from memory at the end drops items.
+
+### Status
+9. Every entry has a status: `open`, `closed`, `superseded`, or `failed`. At the end of each task, update every entry the task touched and give a one-line reason for each change.
+   Why: most entries stayed `open` after they were resolved.
+10. Before ending a session, list the remaining `open` entries and mark any that are resolved.
+    Why: stale `open` entries make the next session's check useless.
+
+### Closing check
+11. End every research answer with one line: "Log check: entries added N, statuses changed N, read-back done yes/no, coverage record updated yes/no." If any answer is no, fix it before sending.
+    Why: it makes a skipped step visible in the answer itself.
+
+## Rule maintenance
+
+12. When I point out a miss, or you find one in your own work, name which case it is: a rule that exists but was skipped, a missing rule, or two rules that conflict.
+    Why: each case has a different fix, and mixing them adds rules that don't help.
+13. Propose the exact edit to this file as text, with the reason. Never edit CLAUDE.md unless I tell you to.
+    Why: unreviewed self-edits to the file that governs everything accumulate.
+
