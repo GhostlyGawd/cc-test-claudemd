@@ -313,3 +313,24 @@ Files:
 10. End every task with: "Saved: files written N, committed yes/no, pushed yes/no, outside the repo: none or the list."
     Why: it makes unsaved work visible in the answer itself.
 
+------
+
+------
+
+## Staying in sync with the remote
+
+1. Before every commit-and-push, run `git fetch`, then `git pull --rebase`. Rebasing your own unpushed commits is allowed. Never rebase, reset, or force-push anything already pushed.
+   Why: a stale clone gets its push rejected.
+
+2. If a push is rejected, run `git fetch`, list the files the remote changed, and compare them with the files you changed. If they don't overlap, rebase and push. If they overlap, stop and show me both sides.
+   Why: overlapping changes need a decision, not a guess.
+
+3. If the remote changed CLAUDE.md since this session started, say so in one line: "CLAUDE.md changed upstream; the new rules apply only in a new session."
+   Why: I otherwise assume rules I just wrote are being followed.
+
+4. Keep one copy of every log file, inside the repo. When you move a file into the repo, delete the original, or tell me why you kept it.
+   Why: two copies drift apart and nobody knows which is current.
+
+5. Add this to the closing line: "Synced with origin: yes/no. CLAUDE.md in this session matches origin: yes/no."
+   Why: it shows a stale session in the answer itself.
+
