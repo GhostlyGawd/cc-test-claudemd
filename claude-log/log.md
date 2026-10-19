@@ -33,3 +33,4 @@
 2026-10-19 | fact | IPG/Width.ai (2026-06-22): ~14-agent LangGraph produces briefs, no live writes, strategists review every brief, no measured outcomes; SellerLabs agent guide: draft-only start, approval gate, 90%/70% thresholds vendor-reported | both opened | open
 2026-10-19 | fact | Claude "Amazon Selling Partner" connector (claude.com listing, added Sept 2026): beta, made by Amazon, read + write tools, approve every action | page opened | open
 2026-10-19 | decision | Hold push of 96aee5b until the user makes the repo private; re-check visibility with gh api before pushing | user said they will make it private; repo still public at last check | open
+2026-10-19 | failed | Could not make the repo private: PATCH repos/GhostlyGawd/cc-test-claudemd visibility=private returned HTTP 403 "Repository settings writes are not permitted through this proxy"; user must change it in GitHub settings | gh api output | open
