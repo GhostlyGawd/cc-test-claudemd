@@ -139,3 +139,27 @@ Cited anywhere in the findings only as "snippet / unverified":
 - Round 4: stopped under the rule; the last searches (patents, reddit, A/B) added no new independent evidence on AI listing efficacy.
 - Round 5: stopped on effort; Pacvue, Perpetua, Shulex, AMZScout and Viral Launch remain unresolved.
 - Round 6: single-fact lookup; the seller free-offer detail rests on one secondary source.
+
+## Task 7: agentic listing workflow for Acadia (2026-10-19)
+Saved answer: claude-log/answers/2026-10-19-agentic-listing-workflow-design.md
+
+Queries run (10):
+- Acadia Amazon brand growth agency Acadia Capital aggregator Amazon brands
+- Crush Amazon accelerator Acadia Crush Amazon-first brands program
+- Selling Partner API Listings Items API putListingsItem patchListingsItem product type definitions create update listings
+- Amazon Selling Partner API Acceptable Use Policy prohibits using Amazon information to train machine learning AI models
+- Manage Your Experiments API programmatic access create experiment SP-API A/B test automation
+- Brand Analytics Search Query Performance report SP-API Brand Analytics reports API access role
+- Amazon Selling Partner plugin Claude Quick Seller Assistant MCP developer documentation how to connect
+- agentic Amazon listing automation risks account suspension API bulk listing changes brand registry content integrity
+- Selling Partner API A+ Content Management API contentDocument create update submit for approval ASIN
+- Amazon agency AI agent workflow client accounts multi-brand human approval listing optimization case study results
+
+Pages opened: developer-docs.amazon Listings Items use-case guide; policies-and-agreements; A+ API use-case guide; sellercentral AUP and DPP; claude.com Amazon Selling Partner connector; sellerlabs connect-claude and agent-guide articles; clearadsagency SQP article; width.ai IPG article; sell.amazon.com split-test page.
+
+Failed or unreadable: emarketer.com Acadia-Crush article (403, retried once); developer-docs.amazon.com URLs redirected to developer-docs.amazon (followed).
+
+Unopened (search results only), by reason:
+- Duplicate or vendor roundups: supplykick.com agency AI posts, eva.guru, commerceiq.ai blog, wiseppc.com, sellerlabs multi-agent and watchdog posts, portermetrics, novadata Claude MCP guide, enterprisedna MCP directory
+- Off-target: Alexa Accelerator, Accelerate Acadia (Louisiana), Acadia University results
+- Cost: acadia.io service and blog pages (Acadia described as a growth agency only via search snippet), A+ create/edit/publish guide, Listings Items v2020-09-01 reference, SP-API analytics report type page, conductatlas Associates policy pages, Amalyze AI-and-data-use page
