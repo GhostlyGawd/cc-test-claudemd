@@ -103,3 +103,4 @@
 2026-10-21 | fact | STATE.md first line is '# STATE ... UNVERIFIED' and goal line is 'Goal: ...', not 'Goal (user's words, date): ...' as Staying aligned 1 requires; an existing rule that was not met | STATE.md head, CLAUDE.md line 409 | open
 2026-10-21 | decision | User approved A1-A6 + B1-B2 via AskUserQuestion (and fast-forwarding main); T7 applied: CLAUDE.md 451 -> 433 lines, 18 closing-line rule lines removed, Chat answers 1 and Staying aligned 2 reworded; 18 headings kept; no dangling references (grep) | git diff --stat, wc -l | closed
 2026-10-21 | decision | CLAUDE.md changed in this session by approved edit (rule 13 satisfied by explicit user answer); new rules apply only in a new session | AskUserQuestion answer | closed
+2026-10-21 | decision | STATE.md Recently done updated with the harness update; goal line unchanged (Acadia); harness work was a one-off | STATE.md | closed
