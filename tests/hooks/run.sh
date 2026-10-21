@@ -44,19 +44,24 @@ t "H1 unpushed commit on detached HEAD blocks" blocks "$(stop '{}')"
 new_repo; git remote remove origin
 t "H1 repo with no remote and clean tree allows" allows "$(stop '{}')"
 
-echo "== H2: answer format (40-word threshold)"
+echo "== H2: no template lines in short replies (under 100 words)"
 new_repo
-OK=$(printf 'You asked: test.\n\n%s\n\nSaved and pushed: yes. Problems: none.' "$(words 45)")
 t "H2 empty message allows"                allows "$(stop "$(msg '')")"
-t "H2 39 words without format allows"      allows "$(stop "$(msg "$(words 39)")")"
-n=$(lines); out=$(stop "$(msg "$(words 40)")")
-t "H2 40 words without format blocks"      blocks "$out"
-t "H2 missing both lines logs two misses"  is "$(( $(lines) - n ))" 2
-t "H2 compliant reply allows"              allows "$(stop "$(msg "$OK")")"
-t "H2 'You haven't asked' opener allows"   allows "$(stop "$(msg "$(printf "You haven't asked for anything yet.\n\n%s\n\nSaved and pushed: yes." "$(words 45)")")")"
-t "H2 bold opener allows"                  allows "$(stop "$(msg "$(printf '**You asked:** x.\n\n%s\n\nSaved and pushed: yes.' "$(words 45)")")")"
-t "H2 missing first line blocks"           blocks "$(stop "$(msg "$(printf '%s\n\nSaved and pushed: yes.' "$(words 45)")")")"
-t "H2 missing last line blocks"            blocks "$(stop "$(msg "$(printf 'You asked: x.\n\n%s' "$(words 45)")")")"
+t "H2 39 words plain allows"               allows "$(stop "$(msg "$(words 39)")")"
+t "H2 42-word plain reply allows"          allows "$(stop "$(msg "$(words 42)")")"
+t "H2 90-word plain reply allows"          allows "$(stop "$(msg "$(words 90)")")"
+t "H2 150-word report with sections allows" allows "$(stop "$(msg "$(printf 'You asked: x.\n\nAnswer: x.\n\n%s\n\nSaved and pushed: yes.' "$(words 150)")")")"
+n=$(lines); out=$(stop "$(msg "$(printf 'You asked: SECRETWORD please.\n\n%s' "$(words 10)")")")
+t "H2 opener line in a short reply blocks" blocks "$out"
+t "H2 ceremony block logs exactly one line" is "$(( $(lines) - n ))" 1
+t "H2 log names the label"                 grep -q 'H2 | ceremony in short reply: You asked:' claude-log/misses.md
+t "H2 log never stores reply text"         bash -c '! grep -q SECRETWORD claude-log/misses.md'
+t "H2 'You haven't asked' opener blocks"   blocks "$(stop "$(msg "$(printf "You haven't asked for anything yet.\n\n%s" "$(words 10)")")")"
+t "H2 closing status line in a short reply blocks" blocks "$(stop "$(msg "$(printf '%s\n\nSaved and pushed: yes.' "$(words 30)")")")"
+t "H2 bold Answer label in a short reply blocks"   blocks "$(stop "$(msg "$(printf '**Answer:** %s' "$(words 60)")")")"
+t "H2 Goal line in a short reply blocks"           blocks "$(stop "$(msg "$(printf 'Goal: x.\n\n%s' "$(words 20)")")")"
+t "H2 Matches goal line in a short reply blocks"   blocks "$(stop "$(msg "$(printf '%s\n\nMatches goal: yes.' "$(words 20)")")")"
+t "H2 loop guard allows a flagged reply"           allows "$(stop "$(jq -n --arg m "You asked: x. $(words 10)" '{stop_hook_active:true,last_assistant_message:$m}')")"
 
 echo "== H3: command guard"
 new_repo
@@ -76,15 +81,16 @@ t "H3 log names a blocked secret staging"  grep -q 'H3 | blocked: staging .env o
 n=$(lines); guard 'git status' > /dev/null
 t "H3 allowed command logs nothing"        is "$(( $(lines) - n ))" 0
 
-echo "== H4: session start"
+echo "== H4: session start (silent when healthy)"
 new_repo
 out=$(printf '{"source":"startup"}' | bash "$H/session-start.sh"); rc=$?
 t "H4 exits 0"                             is "$rc" 0
-t "H4 prints the goal line"                grep -q 'Goal: test goal' <<< "$out"
-t "H4 prints the branch"                   grep -q 'Branch: ' <<< "$out"
-t "H4 reports origin reachable"            grep -q 'Remote origin reachable' <<< "$out"
+t "H4 prints nothing when healthy"         is "$out" ""
+t "H4 healthy output has no goal line"     bash -c '! grep -q Goal <<< "$1"' _ "$out"
 git checkout -q --detach
-t "H4 warns on detached HEAD"              grep -q 'detached HEAD' <<< "$(printf '{}' | bash "$H/session-start.sh")"
+out=$(printf '{}' | bash "$H/session-start.sh")
+t "H4 warns on detached HEAD"              grep -q 'detached HEAD' <<< "$out"
+t "H4 warning output has no goal line"     bash -c '! grep -q Goal <<< "$1"' _ "$out"
 git remote remove origin
 t "H4 warns when there is no origin"       grep -q 'no origin remote' <<< "$(printf '{}' | bash "$H/session-start.sh")"
 
