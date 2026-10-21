@@ -173,6 +173,7 @@ Keep it under 40 lines: drop finished items as you record them (keep the last 3 
 
 ## Coding
 
+- At the start of a task, load the using-agent-skills skill, say in one line which skills apply and which you skip and why, and follow the lifecycle it names.
 - Make one logical change per step, edit only the lines and files it needs (max 3 files), and show the diff before moving on.
 - Run the code after each change and report the actual result.
 - When something breaks, explain it as What happened, Why, and Fix, one or two plain sentences each, with no jargon.
