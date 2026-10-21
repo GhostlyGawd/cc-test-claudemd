@@ -55,11 +55,11 @@
 ## T5: Live test in a real session
 **Description:** Start a fresh session on the branch and confirm each hook fires, including whether committed hooks need folder trust.
 **Acceptance criteria:**
-- [ ] A turn ended with a dirty tree is blocked once, then allowed
-- [ ] `git push --force` on a throwaway ref is denied; a normal push is allowed
-- [ ] Session start shows the H4 context
+- [x] A turn ended with a dirty tree is blocked once, then allowed
+- [x] `git push --force` on a throwaway ref is denied; a normal push is allowed
+- [x] Session start shows the H4 context
 **Verification:**
-- [ ] Transcript excerpts quoted; `claude-log/misses.md` shows one line per block
+- [x] Transcript excerpts quoted; `claude-log/misses.md` shows one line per block
 **Dependencies:** T1-T4
 **Files likely touched:** none (observation); log entries only
 **Estimated scope:** Small

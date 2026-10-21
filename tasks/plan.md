@@ -35,7 +35,7 @@ T1 install H1+H3 ──► T2 miss log ──► T3 H4 session-start ──► T
 ### Checkpoint B (after T3-T4)
 - [ ] Live test T5 passes before anything goes to `main`
 ### Phase 3: Prove and prune
-- [ ] T5: Live test in a real session (dirty-tree stop, denied force-push, session-start output, trust behaviour)
+- [x] T5: Live test in a real session (dirty-tree stop, denied force-push, session-start output, trust behaviour)
 - [ ] T6: Saved proposal listing the CLAUDE.md rules the hooks now cover, line counts from `wc -l`
 - [ ] T7: Apply the approved CLAUDE.md deletions (needs your say-so)
 ### Checkpoint C
