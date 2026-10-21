@@ -3,11 +3,11 @@
 ## T1: Install H1 and H3
 **Description:** Add the two pipe-tested scripts and wire them in settings.json, merged with the existing plugin keys.
 **Acceptance criteria:**
-- [ ] `.claude/hooks/stop-check.sh` and `.claude/hooks/guard-bash.sh` exist and are executable
-- [ ] `.claude/settings.json` keeps `extraKnownMarketplaces` and `enabledPlugins` and adds the Stop and PreToolUse(Bash) hooks plus deny rules for force-push and `.env` reads
+- [x] `.claude/hooks/stop-check.sh` and `.claude/hooks/guard-bash.sh` exist and are executable
+- [x] `.claude/settings.json` keeps `extraKnownMarketplaces` and `enabledPlugins` and adds the Stop and PreToolUse(Bash) hooks plus deny rules for force-push and `.env` reads
 **Verification:**
-- [ ] `bash -n` passes on both scripts; `jq -e '.hooks.Stop[0].hooks[0].command' .claude/settings.json` prints the command
-- [ ] Pipe-tests: clean tree exits 0 with no output; dirty tree blocks; `stop_hook_active:true` exits 0; force-push denied; normal push allowed (real output quoted)
+- [x] `bash -n` passes on both scripts; `jq -e '.hooks.Stop[0].hooks[0].command' .claude/settings.json` prints the command
+- [x] Pipe-tests: clean tree exits 0 with no output; dirty tree blocks; `stop_hook_active:true` exits 0; force-push denied; normal push allowed (real output quoted)
 **Dependencies:** None
 **Files likely touched:** `.claude/settings.json`, `.claude/hooks/stop-check.sh`, `.claude/hooks/guard-bash.sh`
 **Estimated scope:** Small (3 files)
