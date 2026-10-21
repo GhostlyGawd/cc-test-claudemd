@@ -30,10 +30,10 @@
 ## T3: H4 session-start context
 **Description:** A SessionStart hook prints the STATE.md goal line, branch, remote and push-ability, and warns on detached HEAD.
 **Acceptance criteria:**
-- [ ] Output includes the goal line, branch name, and a detached-HEAD warning when applicable
-- [ ] The hook never blocks (no `onFailure: block`)
+- [x] Output includes the goal line, branch name, and a detached-HEAD warning when applicable
+- [x] The hook never blocks (no `onFailure: block`)
 **Verification:**
-- [ ] Pipe-test `{"source":"startup"}` on a branch and on a detached HEAD; output quoted
+- [x] Pipe-test `{"source":"startup"}` on a branch and on a detached HEAD; output quoted
 **Dependencies:** T1
 **Files likely touched:** `.claude/hooks/session-start.sh`, `.claude/settings.json`
 **Estimated scope:** Small (2 files)
