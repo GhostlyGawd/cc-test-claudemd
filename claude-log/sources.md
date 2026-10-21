@@ -220,3 +220,6 @@ Unopened (search results only), by reason:
 - Duplicate or secondary summaries: lyzr.ai, simonwillison.net, spring.io, helicone.ai, buchman.co.il, traeai, memx.app, educative.io, wikidocs, dataaspirant, team400, uniqus
 - Third-party Claude Code workflow blogs (mindstudio, morphllm, mer.vin, buildmvpfast, mcp.directory, mintlify): superseded by the official workflows page
 - Vendor failure posts (aerospike, lenshq, medium, dev.to, readwise, gitconnected): Mirantis opened as representative
+
+## 2026-10-21: Addy agent-skills plugin
+Queries: see answers/2026-10-21-addy-agent-skills-plugin.md (4 run). Opened: github.com/addyosmani/agent-skills, skills.addy.ie/docs/getting-started. Unopened: grouped in the answer file. Answer: claude-log/answers/2026-10-21-addy-agent-skills-plugin.md
