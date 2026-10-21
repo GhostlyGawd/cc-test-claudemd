@@ -68,6 +68,11 @@ for c in 'git push -u origin main' 'git add README.md' 'git commit -m "never git
 done
 n=$(lines); guard 'git push -f' > /dev/null
 t "H3 deny logs exactly one line"          is "$(( $(lines) - n ))" 1
+guard 'git push --force https://user:SECRET123@example.com/x/y.git' > /dev/null
+t "H3 log never stores the denied command text" bash -c '! grep -q SECRET123 claude-log/misses.md'
+t "H3 log names what was blocked"          grep -q 'H3 | blocked: force-push' claude-log/misses.md
+guard 'git add .env' > /dev/null
+t "H3 log names a blocked secret staging"  grep -q 'H3 | blocked: staging .env or node_modules' claude-log/misses.md
 n=$(lines); guard 'git status' > /dev/null
 t "H3 allowed command logs nothing"        is "$(( $(lines) - n ))" 0
 
