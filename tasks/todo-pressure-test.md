@@ -4,24 +4,25 @@ Order follows risk: the cheapest check of the riskiest assumption comes first.
 
 ## Task 1: Can a headless test session run here?
 **Description:** Run one `claude -p` session in a throwaway copy of the repo and capture its transcript.
-- [ ] A transcript file exists with the reply text and the model name
-- [ ] Hooks can be switched off for the run
+- [x] A transcript file exists with the reply text and the model name (done 2026-10-21: `claude -p ... --output-format json` returned the reply, `modelUsage` and cost; about $0.025 per tiny run)
+- [x] Hooks can be switched off for the run (a scratch copy with only a CLAUDE.md loads no hooks; `--bare` also skips them)
+- Finding: one run listed claude-haiku-5-5 as the first model, so the runner must pin `--model claude-sonnet-5-5`.
 **Verification:** quote the command and the first 20 lines of output.
 **Dependencies:** none. **Scope:** XS (scratchpad only, no repo files).
 
 ## Task 2: Rule inventory
 **Description:** One row per rule in CLAUDE.md with id, section, text, Why, observable.
-- [ ] Row count matches a hand count of numbered and bulleted rules per section
-- [ ] No row is missing its Why
+- [x] Row count matches a hand count: 138 rows = 127 list items + 11 paragraph rules (Work log 6, Project state 5)
+- [x] 29 rows have no Why because CLAUDE.md has none for them (Work log, Project state, Coding, Commit and push, file definitions); marked MISSING, not invented
 **Verification:** re-read the file from disk; compare row count with the `grep` count per section.
-**Dependencies:** none. **Files:** `tasks/pressure-test/rules.md`. **Scope:** S.
+**Dependencies:** none. **Files:** `tasks/pressure-test/rules.tsv`. **Scope:** S.
 
 ## Task 3: Sort rules into tracks H, G, N
 **Description:** Add a track column and, for track G, a one-line scenario idea.
-- [ ] Every row has a track
-- [ ] Rules that look duplicated or opposed are flagged with the other rule's id
+- [x] Every row has a track: G 106, H 24, N 8
+- [x] 34 rows flagged as duplicate, overlapping or possibly conflicting (column `flags`)
 **Verification:** re-read; count rows per track and quote the totals.
-**Dependencies:** 2. **Files:** `tasks/pressure-test/rules.md`. **Scope:** S.
+**Dependencies:** 2. **Files:** `tasks/pressure-test/rules.tsv`. **Scope:** S.
 
 ### Checkpoint A: after tasks 1-3
 - [ ] Show you the track counts and the cost estimate (sessions x runs) before any test is run

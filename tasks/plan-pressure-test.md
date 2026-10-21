@@ -5,7 +5,7 @@ Scope: one-off. The STATE.md goal is unchanged and the Acadia work stays parked.
 Skills: planning-and-task-breakdown. Skipped: the code skills, because nothing is implemented here.
 Files: this plan and `tasks/todo-pressure-test.md`. The older `tasks/plan.md` and `tasks/todo.md` still have unchecked tasks, so they are left alone.
 
-Assumed, not told by you: (a) a headless `claude -p` run works in this container, (b) you want verdicts for the model this session runs on, (c) a few hundred short test sessions is an acceptable cost. Task 1 checks (a); the Open questions section covers (b) and (c).
+Assumed, not told by you: (a) a headless `claude -p` run works in this container, (b) you want verdicts for the model this session runs on, (c) a few hundred short test sessions is an acceptable cost. (a) was checked in Task 1 and holds. The Open questions section covers (b) and (c).
 
 ## Goal of the test
 For every rule in CLAUDE.md, answer one question with evidence: does the model behave differently because this line exists? Each rule ends in one verdict:
@@ -41,7 +41,7 @@ For every rule in CLAUDE.md, answer one question with evidence: does the model b
 | Test sessions write to the repo (logs, commits) | Pollutes history | Run each in a throwaway copy of the repo, delete after |
 
 ## Open questions
-- Budget: is roughly 400 short sessions acceptable, or should the first pass cover only the highest-risk sections (Research, Chat answers, Who sets the goal)?
+- Scope: all sections (user, 2026-10-21). Budget: estimate shown at checkpoint A, awaiting approval.
 - Model: test the model this session runs on, or the one you use day to day?
 
 ## Tasks
