@@ -3,3 +3,7 @@
 2026-10-21 | miss | H3 | denied: wc -l claude-log/misses.md && git push --force origin HEAD:refs/heads/zz-live-te | claude/harness-update-2026-10-21 | closed
 2026-10-21 | miss | H1 | turn ended with uncommitted changes | claude/harness-update-2026-10-21 | closed
 2026-10-21 | miss | H2 | reply of 40+ words did not end with a 'Saved and pushed:' line | claude/test-kwi44t | closed
+2026-10-21 | miss | H1 | turn ended with uncommitted changes | claude/harness-friction-plan-2026-10-21 | open
+2026-10-21 | miss | H1 | turn ended with uncommitted changes | claude/harness-friction-plan-2026-10-21 | open
+2026-10-21 | miss | H1 | turn ended with uncommitted changes | claude/harness-friction-plan-2026-10-21 | open
+2026-10-21 | miss | H1 | turn ended with uncommitted changes | claude/harness-friction-plan-2026-10-21 | open
