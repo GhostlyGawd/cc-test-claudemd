@@ -104,3 +104,4 @@
 2026-10-21 | decision | User approved A1-A6 + B1-B2 via AskUserQuestion (and fast-forwarding main); T7 applied: CLAUDE.md 451 -> 433 lines, 18 closing-line rule lines removed, Chat answers 1 and Staying aligned 2 reworded; 18 headings kept; no dangling references (grep) | git diff --stat, wc -l | closed
 2026-10-21 | decision | CLAUDE.md changed in this session by approved edit (rule 13 satisfied by explicit user answer); new rules apply only in a new session | AskUserQuestion answer | closed
 2026-10-21 | decision | STATE.md Recently done updated with the harness update; goal line unchanged (Acadia); harness work was a one-off | STATE.md | closed
+2026-10-21 | decision | Archived test session session_01SounnXB1CSTKHQfH9nCe8t at user request; it finished read-only with a clean tree (cost 0.18 USD per session record) | archive_session result: SESSION_STATUS_ARCHIVED | closed
