@@ -9,4 +9,4 @@ Plan: `tasks/plan-friction.md`. Evidence: `claude-log/answers/2026-10-21-frictio
 - [x] T5. Make `session-start.sh` silent when healthy. Done when the H4 tests pass.
 - [x] T6. Apply the approved CLAUDE.md edits. Done when `wc -l CLAUDE.md` prints 431 or less.
 - [ ] T7. Replay the eight situations in a fresh session and record word counts and labels (M2). Done when all eight are inside their limits, or the misses are listed.
-- [ ] T8. GATE: ask before merging to main.
+- [x] T8. GATE: the user said "merge it to main" (2026-10-21); merged with a conflict in log.md resolved by keeping both sides.
