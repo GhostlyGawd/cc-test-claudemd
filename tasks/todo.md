@@ -86,3 +86,15 @@
 
 ## Checkpoint C
 - [ ] Miss log holds only real blocks; CLAUDE.md shorter by the counted amount; log and STATE.md updated
+
+## T8: Fix the required findings from the retro review (done 2026-10-21)
+**Description:** F1 (H1 missed unpushed commits without an upstream), F2 (H3 logged the raw command), F3 (tests lived only in /tmp).
+**Acceptance criteria:**
+- [x] `bash tests/hooks/run.sh` runs 41 checks from inside the repo and exits 0
+- [x] Each fix had a failing test first: F1 two cases (no upstream, detached HEAD) failed 2 of 40, F2 three cases failed 3 of 41, then all passed
+**Verification:**
+- [x] Suite output quoted in the session: `passed 41, failed 0`
+**Dependencies:** T1-T4
+**Files touched:** `.claude/hooks/stop-check.sh`, `.claude/hooks/guard-bash.sh`, `tests/hooks/run.sh`
+**Estimated scope:** Small
+Not done (your call, in answers/2026-10-21-retro-review.md): F4 to F7.

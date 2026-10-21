@@ -38,6 +38,7 @@ T1 install H1+H3 ──► T2 miss log ──► T3 H4 session-start ──► T
 - [x] T5: Live test in a real session (dirty-tree stop, denied force-push, session-start output, trust behaviour)
 - [x] T6: Saved proposal listing the CLAUDE.md rules the hooks now cover, line counts from `wc -l`
 - [x] T7: Apply the approved CLAUDE.md deletions (needs your say-so)
+- [x] T8: Fix retro-review findings F1-F3 with tests first
 ### Checkpoint C
 - [ ] Miss log has entries only from real blocks; CLAUDE.md shorter by the counted amount; STATE.md and log updated
 
