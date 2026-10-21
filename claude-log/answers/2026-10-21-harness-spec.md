@@ -4,8 +4,8 @@ Source of intent: the confirmed Statement of Intent from the 2026-10-21 intervie
 Phase 0 (capability map): skipped. The work is one capability (enforcement plus a miss log), small enough for one spec. If you want the rule pruning split into its own spec, say so.
 
 ## Assumptions I'm making (correct me now or I proceed with these)
-1. Hooks defined in the repo's `.claude/settings.json` run in cloud sessions for this repo. Not tested.
-2. A Stop hook receives JSON on stdin that includes `stop_hook_active` (seen in the update-config skill text) and a `transcript_path` field. The second is NOT verified; checks that need it are marked below.
+1. VERIFIED in docs, NOT tested live: a repo's committed `.claude/settings.json` is read in a cloud session that has one repository and is not inside a Claude project (settings page, "Settings in cloud sessions"). In a project thread or a multi-repo session its hooks do not apply. Whether its hooks also wait for the folder-trust step is not stated.
+2. VERIFIED in docs (hooks page, "Stop input"): a Stop hook receives `stop_hook_active` and `last_assistant_message` (the text of Claude's final reply). The docs say to prefer `last_assistant_message` over reading `transcript_path`, because the transcript may lag. H2 therefore uses `last_assistant_message`, not the transcript.
 3. Hooks stay shell scripts using `bash` and `jq`; both exist in this container (jq ran in this session's pipe-tests).
 4. The miss log lives at `claude-log/misses.md` inside the repo (Durable storage rule 1).
 5. A block from a Stop hook makes me continue the turn once; `stop_hook_active` stops an endless loop.
@@ -39,7 +39,7 @@ claude-log/answers/          saved proposals (this file lives here)
 | Id | Event | Check | Result | CLAUDE.md prose it could replace (after you approve) |
 |---|---|---|---|---|
 | H1 | Stop | dirty tree or unpushed commits | block once, log a miss | Durable storage 4, 10; Commit and push "before ending a session" |
-| H2 | Stop | last reply starts with "You asked:" and ends with "Saved and pushed:" (needs `transcript_path`, unverified) | block once, log a miss | Goal rule 3, Chat answers 7 |
+| H2 | Stop | last reply starts with "You asked:" and ends with "Saved and pushed:" (reads `last_assistant_message`) | block once, log a miss; the harness stops honoring blocks after 8 in a row (hooks page, Stop) | Goal rule 3, Chat answers 7 |
 | H3 | PreToolUse(Bash) | force-push, `git add` of `.env`/`node_modules` | deny | Commit and push: force-push and secrets bullets |
 | H4 | SessionStart | none; prints STATE.md goal line, branch, remote, push-ability, warns on detached HEAD | context only | Project state "at session start", Durable storage 8 |
 Pipe-tested already (2026-10-21, real output in `2026-10-21-harness-update.md`): H1 and H3 only. H2 and H4 are not written yet.
@@ -76,10 +76,11 @@ No coverage target; there is no application code.
 6. After install, I deliver one saved proposal listing which CLAUDE.md rules can be deleted, with line counts counted by `wc -l`, not estimated.
 
 ## Open Questions
-1. Do you want H2 (answer-format check)? It depends on `transcript_path`, which I have not verified, and it will block on any reply that lacks the two lines, including short replies like "Yes".
+1. Do you want H2 (answer-format check)? The field it needs now exists, but it will block any reply that lacks the two lines, including short replies like "Yes". Should short replies be exempt?
 2. Should H1 also block when the tree is clean but the branch is detached?
 3. Is `claude-log/misses.md` the right place, or should misses go into `log.md` with `miss` as a type?
 4. Which comes first if you want to ship in pieces: H1 + H3 (already tested) or H4?
 
 ## Not checked
-Hooks in cloud sessions; `transcript_path` field; the exact JSON shape for Stop and SessionStart output from the official docs (taken from the update-config skill text); how many of the 451 lines the hooks would let us remove.
+Docs check done 2026-10-21 (official pages only, so the sources share one origin: confidence medium, not high). Verified: Stop input fields and block format, PreToolUse deny format, SessionStart stdout/additionalContext, and that single-repo cloud sessions read the repo's settings.json.
+Still not checked: hooks running live in this cloud session (needs an install and a test); whether committed hooks wait for folder trust; the last ~70,000 characters of the hooks page (offset 200000) and the cloud-environments page were not opened; the SessionStart timeout in cloud sessions; how many of the 451 lines the hooks would let us remove.

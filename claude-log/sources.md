@@ -231,3 +231,7 @@ Queries: 3, opened: discover-plugins, claude-code-on-the-web, cloud-environments
 Queries: none (local audit). Read: CLAUDE.md (grep/diff), .claude/settings.json, STATE.md, claude-log/log.md open entries, origin/claude/harness-audit-4zvuyi (log, diff, audit answer), update-config skill text. Unopened: official Claude Code hooks docs (not fetched). Saved answer: claude-log/answers/2026-10-21-harness-update.md
 
 Spec phase 2026-10-21: no queries; read spec-driven-development skill text; saved claude-log/answers/2026-10-21-harness-spec.md
+
+## 2026-10-21 spec verification
+Queries: none (direct fetches). Opened: code.claude.com/docs/en/hooks (chars 0-200000 of 269866), code.claude.com/docs/en/claude-code-on-the-web (full), code.claude.com/docs/en/settings (full). Unopened: hooks page chars 200000+, cloud-environments#what-carries-over-from-your-setup, projects page. Skipped by reason: none skipped as duplicates; unopened ones are cost/off-target except cloud-environments, which is the only page that could state whether hooks reach a cloud session and was not read.
+Saved answer updated: claude-log/answers/2026-10-21-harness-spec.md
