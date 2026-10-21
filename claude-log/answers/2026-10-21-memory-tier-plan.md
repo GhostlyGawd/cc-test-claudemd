@@ -35,3 +35,6 @@ CLAUDE.md edits (4, 5, 6) and settings.json (7) need your explicit instruction. 
 
 ## Recommendation
 Do step 0, then 1-3 now (single-session value, low risk, testable). Hold 4-7 until you say you run parallel worktrees here. Main tradeoff: 4-7 add rules and files to maintain; if you stay single-session, they are cost without benefit.
+
+## Correction (same day, user asked for my opinion)
+Step 2 duplicates STATE.md, which already holds Now/Next/Blockers/Recently done. Replace "new HANDOFF.md" with "session-start.sh prints STATE.md and the Stop nudge checks STATE.md changed". Step 1 only matters if parallel worktrees are used; assumed not (user said "idk"). Recommended order: step 0, then step 6 (shrink CLAUDE.md), then 2-3 on STATE.md.
