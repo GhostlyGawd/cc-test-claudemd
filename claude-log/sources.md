@@ -226,3 +226,6 @@ Queries: see answers/2026-10-21-addy-agent-skills-plugin.md (4 run). Opened: git
 
 ## 2026-10-21: plugins in cloud sessions
 Queries: 3, opened: discover-plugins, claude-code-on-the-web, cloud-environments, settings. Unopened grouped in answers/2026-10-21-plugins-in-cloud-sessions.md
+
+## 2026-10-21 harness update
+Queries: none (local audit). Read: CLAUDE.md (grep/diff), .claude/settings.json, STATE.md, claude-log/log.md open entries, origin/claude/harness-audit-4zvuyi (log, diff, audit answer), update-config skill text. Unopened: official Claude Code hooks docs (not fetched). Saved answer: claude-log/answers/2026-10-21-harness-update.md
