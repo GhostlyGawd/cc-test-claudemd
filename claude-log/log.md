@@ -86,3 +86,5 @@
 2026-10-21 | failed | First H3 regex matched anywhere in the command text (false positive on echo/grep/commit messages) | live denial of my own pipe-test command | closed (fixed by anchoring to command start; 11-case table in session output)
 2026-10-21 | decision | Treated user's 'Yes' as: approve plan AND exempt short replies from H2 (my recommendation); assumption, not stated by user; H2 task T4 still to come | user reply 'Yes' to a two-part question | open
 2026-10-21 | decision | T1 done: H1 + H3 scripts and settings.json hooks/deny rules installed on branch claude/harness-update-2026-10-21, not yet on main; T2 next | tasks/todo.md | open
+2026-10-21 | decision | T2 done: H1 and H3 now append one line per block/deny to claude-log/misses.md; H1 ignores that file in its dirty check so its own write cannot re-block; pipe-tests A-G passed in a temp repo (quoted in session) | .claude/hooks/*.sh, claude-log/misses.md | open
+2026-10-21 | failed | My T2 test D first blocked because the test left a file inside the repo; test bug, not a hook bug; fixed by moving the file outside and rerunning | session output | closed

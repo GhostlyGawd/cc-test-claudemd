@@ -15,11 +15,11 @@
 ## T2: Miss log
 **Description:** Each block or deny appends one line to `claude-log/misses.md`; H1 ignores that file when checking for a dirty tree.
 **Acceptance criteria:**
-- [ ] A triggered block writes exactly one line in the format `YYYY-MM-DD | miss | <hook id> | <what> | <branch> | open`
-- [ ] Old lines are never rewritten; the log write does not cause a second block
+- [x] A triggered block writes exactly one line in the format `YYYY-MM-DD | miss | <hook id> | <what> | <branch> | open`
+- [x] Old lines are never rewritten; the log write does not cause a second block
 **Verification:**
-- [ ] Pipe-test twice: line count goes up by one per block, earlier lines unchanged (`wc -l` and `diff` quoted)
-- [ ] Dirty tree containing only `misses.md` does not block
+- [x] Pipe-test twice: line count goes up by one per block, earlier lines unchanged (`wc -l` and `diff` quoted)
+- [x] Dirty tree containing only `misses.md` does not block
 **Dependencies:** T1
 **Files likely touched:** `.claude/hooks/stop-check.sh`, `.claude/hooks/guard-bash.sh`, `claude-log/misses.md`
 **Estimated scope:** Small (3 files)

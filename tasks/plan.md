@@ -25,8 +25,8 @@ T1 install H1+H3 ──► T2 miss log ──► T3 H4 session-start ──► T
 
 ## Task list
 ### Phase 1: Enforcement core
-- [ ] T1: Install H1 (unsaved work) and H3 (force-push/secret guard)
-- [ ] T2: Add the miss log to H1 and H3
+- [x] T1: Install H1 (unsaved work) and H3 (force-push/secret guard)
+- [x] T2: Add the miss log to H1 and H3
 ### Checkpoint A (after T1-T2)
 - [ ] Both scripts pass `bash -n`; settings.json passes `jq -e`; pipe-tests quoted; you review before T3
 ### Phase 2: Session start and format
