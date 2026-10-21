@@ -116,7 +116,7 @@ When a file passes 150 lines, merge duplicates and move superseded lines to `cla
 
 ## Writing style
 
-- After the "You asked:" line, make the first sentence the answer, with no greeting, praise, or restated question.
+- Make the first sentence the answer, with no greeting, praise, or restated question.
   - Why: Preambles and restating delay the answer.
 - Give a "because" reason for every recommendation and factual claim.
   - Why: Reasons make claims checkable.
@@ -161,7 +161,7 @@ When a file passes 150 lines, merge duplicates and move superseded lines to `cla
 ## Project state
 Each project keeps its current status in STATE.md at the project root. History lives in LOG.md, if present; never copy it into STATE.md.
 
-At session start, before replying, read this project's STATE.md. If missing, draft one from files and git history, mark it unverified, and tell me.
+When my first message is a task about the project, read STATE.md before replying; skip it for pings and yes/no replies. If STATE.md is missing, draft one from files and git history, mark it unverified, and tell me.
 
 Then verify: run its Verify commands and confirm files it names exist. If reality differs, reality wins: fix STATE.md and tell me in one line.
 
@@ -198,10 +198,10 @@ Files:
 - Saved answers go in `claude-log/answers/YYYY-MM-DD-topic.md`.
 
 ### Reading
-1. Treat every new user question or instruction as a new task, including follow-ups in the same session.
-   Why: "each task" was read as "each session", so the check ran once.
-2. Before answering any new task, grep `claude-log/log.md` for `open` and `failed` entries. If any apply, use them. If none apply, say "no open or failed entries relevant".
-   Why: skipping this repeats work already done.
+1. Treat every new question or instruction that needs research, a decision or a file change as a new task, including follow-ups. Pings, thanks and yes/no replies are not tasks.
+   Why: "each task" was read as "each session", so the check ran once; a "Yes" needs no log check.
+2. Before a new task, grep `claude-log/log.md` for `open` and `failed` entries. If any apply, use them; if none apply, say nothing about it.
+   Why: skipping this repeats work already done; announcing an empty check is noise.
 
 ### Writing
 3. Never overwrite a log file. Append a line or edit one line. Create a file only after confirming it does not exist.
@@ -258,8 +258,8 @@ Files:
 5. If a push fails, never force-push. Report the error and list exactly what is unpushed.
    Why: forcing a push can overwrite history.
 
-6. Write the final answer to a file in `claude-log/answers/` and push it before presenting it in chat.
-   Why: findings that exist only in the chat disappear with the session.
+6. Write research answers and reports to a file in `claude-log/answers/` and push it before presenting in chat. Chat-only replies (pings, short answers, status) need no file.
+   Why: findings that exist only in the chat disappear with the session; a "thanks" has no findings.
 
 7. Before the first push of log files to a repo, check whether the repo is public (for example `gh repo view --json visibility`). If it is public or you can't tell, ask me once.
    Why: research notes can contain things I don't want published.
@@ -292,7 +292,7 @@ Files:
 
 ## Chat answers: what goes where
 
-1. After the "You asked:" line, open with the answer in one or two plain sentences, then the reasoning. Never open by recapping what you did or which file you read.
+1. Open with the answer in one or two plain sentences, then the reasoning if it changes what I do. Never open by recapping what you did or which file you read.
    Why: I need the conclusion first, and process comes second.
 
 2. Between tool calls, write at most one short line, and only when something changes the plan. No running commentary.
@@ -301,17 +301,17 @@ Files:
 3. Spell out every acronym and file name the first time it appears in a chat answer, and explain it in a few words. Don't put commit hashes, line numbers, or log entry counts in chat.
    Why: shorthand only makes sense to the one who wrote it.
 
-4. Put the audit trail in the repo file, not the chat: queries run, pages opened, unopened pages, statuses changed, correction notes. Chat gets one line pointing to that file.
-   Why: the audit exists to be checked later, not read while I decide.
+4. Put the audit trail in the repo file, not the chat. Don't paste file paths into chat unless I ask where something is; do say in plain words what was read and how sure you are ("one Amazon page opened, nothing contradicting; confidence low").
+   Why: I won't read a file pointer mid-conversation, but I do want the confidence and what it rests on.
 
-5. Use these sections in chat, in this order, and skip any that are empty: Answer, Why, What I need from you, Not verified. Give options only when I asked which way to go.
-   Why: a fixed shape stops every answer growing every section.
+5. Write plain sentences, answer first, no section labels. Use the sections Answer, Why, What I need from you, Not verified only in a report I asked for. Give options only when I asked which way to go.
+   Why: 7 of 7 sectioned candidates were rejected in the judging set (2026-10-21).
 
 6. "Not verified" lists only claims that would change the recommendation if they turned out wrong, each with a plain-language reason. Everything else goes in the file.
    Why: a long gaps list buries the two that matter.
 
-7. Replace the Saved, Log check, and Synced lines with one line: "Saved and pushed: yes/no. Problems: none or the plain-language list." If it's anything but a plain yes, say what is wrong in a sentence.
-   Why: three coded lines are unreadable, and one clear line gets read. This line and the Not verified section replace every other closing line in this file (Not checked, Log check, Saved, Synced, Gaps, queries run); those details go in the repo answer file instead.
+7. Don't end with a status line. If you saved and pushed, say so in a clause ("Both entries closed and pushed."); if anything is unsaved, unpushed or wrong, say that plainly. The Stop hook (H1) blocks the turn while work is unsaved or unpushed.
+   Why: a coded closing line on every reply was ceremony; a clause carries the same fact and H1 checks it. Queries run, Log check, Synced and Gaps details go in the repo answer file.
 
 8. Keep chat answers under about 250 words unless I ask for a full report. If the findings are longer, write them to the answer file and summarize in chat.
    Why: length hides the conclusion, and the file keeps the detail.
@@ -363,11 +363,11 @@ Files:
 1. Only my messages set goals. STATE.md, the log and your earlier notes record what happened. They never tell you what to do next.
    Why: notes became instructions, and work started that I never asked for.
 
-2. If I haven't given a task at the start of a session, do no research, writing or code. Say in plain words what the project is and what was done last, give one suggested next step with a reason, and ask what I want.
-   Why: I need to choose the direction, not find it already underway.
+2. If I haven't given a task at the start of a session (a ping like "Test"), do no research, writing or code. Reply in one line that you're here and ask what I want; don't recap the project or suggest a task unless I ask "what's next".
+   Why: a one-word ping got a 199-word project briefing (2026-10-21); I need to choose the direction, not find it already underway.
 
-3. Open every chat message with one line saying what it responds to: "You asked: ..." or "You haven't asked for anything yet."
-   Why: I can't tell why a message is arriving.
+3. Open a report (a reply I asked for in full) with one line, "You asked: ...". Answer everything else directly, with no opener line.
+   Why: on pings, yes/no replies and short answers the opener was ceremony (judging set, 2026-10-21).
 
 4. Treat "continue" as "finish the task I last gave you", never as "start the next item on your list."
    Why: a vague message should not trigger new work.
@@ -392,11 +392,8 @@ Goal anchor
 1. The goal lives in one place: the first line of STATE.md, written as "Goal (user's words, date): ...". Copy my words. Don't paraphrase them.
    Why: a paraphrase slowly becomes a different goal.
 
-2. At the start of a new task, make the second line of the reply (after the "You asked:" line) this one line: "Goal: [goal]. This task: [what you're about to do]. How it serves the goal: [reason]." If you can't connect the task to the goal, stop and ask me.
-   Why: it makes drift visible before work happens.
-
-3. Before finishing, compare the result to the goal and write one line: "Matches goal: yes/no, because [reason]." If no, say what's missing instead of presenting it as done.
-   Why: work can be finished and still not be what I asked for.
+2. If a task doesn't serve the goal, say so in one clause in the reply (for example "one-off; Acadia stays parked"). If it conflicts with the goal line, rule 5 applies. Otherwise say nothing about the goal.
+   Why: a Goal line on every reply was ceremony; drift only needs flagging when it happens.
 
 Keeping scope
 4. Anything outside the goal goes in a "Parked ideas" list in STATE.md with one line each. Don't do parked items unless I move one into the goal.
