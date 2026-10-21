@@ -1,5 +1,5 @@
 #!/bin/bash
-# H1+H2 Stop hook: block while work is unsaved (H1, blind to unpushed commits on a detached HEAD) or a reply of MIN_WORDS+ lacks its "You asked:" first line or "Saved and pushed:" last line (H2); log each miss.
+# H1+H2 Stop hook: block while work is unsaved (H1: uncommitted changes, or commits that are on no remote branch) or a reply of MIN_WORDS+ lacks its "You asked:" first line or "Saved and pushed:" last line (H2); log each miss.
 MIN_WORDS=40
 in=$(cat)
 [ "$(echo "$in" | jq -r '.stop_hook_active // false')" = "true" ] && exit 0
@@ -9,7 +9,7 @@ reasons=""
 miss() { mkdir -p claude-log && echo "$(date +%F) | miss | $1 | $2 | $branch | open" >> claude-log/misses.md; }
 
 dirty=$(git status --short | grep -v ' claude-log/misses.md$')
-unpushed=$(git log '@{u}..HEAD' --oneline 2>/dev/null)
+unpushed=""; [ -n "$(git remote)" ] && unpushed=$(git log HEAD --not --remotes --oneline 2>/dev/null)
 if [ -n "$dirty$unpushed" ]; then
   what="${dirty:+uncommitted changes}${dirty:+${unpushed:+ and }}${unpushed:+unpushed commits}"
   miss H1 "turn ended with $what"
