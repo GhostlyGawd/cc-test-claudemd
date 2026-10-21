@@ -235,3 +235,6 @@ Spec phase 2026-10-21: no queries; read spec-driven-development skill text; save
 ## 2026-10-21 spec verification
 Queries: none (direct fetches). Opened: code.claude.com/docs/en/hooks (chars 0-200000 of 269866), code.claude.com/docs/en/claude-code-on-the-web (full), code.claude.com/docs/en/settings (full). Unopened: hooks page chars 200000+, cloud-environments#what-carries-over-from-your-setup, projects page. Skipped by reason: none skipped as duplicates; unopened ones are cost/off-target except cloud-environments, which is the only page that could state whether hooks reach a cloud session and was not read.
 Saved answer updated: claude-log/answers/2026-10-21-harness-spec.md
+
+## 2026-10-21 T6 and /goal question
+Queries: none. Opened: CLAUDE.md (full, 451 lines), code.claude.com/docs/en/goal (full). Unopened: ~/.claude/stop-hook-git-check.sh (platform hook, outside the repo, not needed for the proposal). Saved answer: claude-log/answers/2026-10-21-rules-to-drop.md

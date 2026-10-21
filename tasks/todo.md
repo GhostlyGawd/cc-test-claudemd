@@ -67,9 +67,9 @@
 ## T6: Proposal for dropping rules
 **Description:** A saved answer listing each CLAUDE.md rule the hooks now enforce, with line counts from `wc -l`.
 **Acceptance criteria:**
-- [ ] Every proposed deletion names the hook that covers it and the test that proved it
+- [x] Every proposed deletion names the hook that covers it and the test that proved it
 **Verification:**
-- [ ] `wc -l` before/after of the proposed file quoted
+- [x] `wc -l` before/after of the proposed file quoted
 **Dependencies:** T5
 **Files likely touched:** `claude-log/answers/<date>-rules-to-drop.md`
 **Estimated scope:** XS
