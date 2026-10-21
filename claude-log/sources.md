@@ -223,3 +223,6 @@ Unopened (search results only), by reason:
 
 ## 2026-10-21: Addy agent-skills plugin
 Queries: see answers/2026-10-21-addy-agent-skills-plugin.md (4 run). Opened: github.com/addyosmani/agent-skills, skills.addy.ie/docs/getting-started. Unopened: grouped in the answer file. Answer: claude-log/answers/2026-10-21-addy-agent-skills-plugin.md
+
+## 2026-10-21: plugins in cloud sessions
+Queries: 3, opened: discover-plugins, claude-code-on-the-web, cloud-environments, settings. Unopened grouped in answers/2026-10-21-plugins-in-cloud-sessions.md
