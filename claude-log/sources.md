@@ -238,3 +238,9 @@ Saved answer updated: claude-log/answers/2026-10-21-harness-spec.md
 
 ## 2026-10-21 T6 and /goal question
 Queries: none. Opened: CLAUDE.md (full, 451 lines), code.claude.com/docs/en/goal (full). Unopened: ~/.claude/stop-hook-git-check.sh (platform hook, outside the repo, not needed for the proposal). Saved answer: claude-log/answers/2026-10-21-rules-to-drop.md
+
+## 2026-10-21 MYE API question
+Queries (7): "Amazon Manage Your Experiments API"; "programmatically create A/B test Amazon listing experiment SP-API"; "Manage Your Experiments automation endpoint OR no API OR not available via API" (disproof); "Amazon A/B testing experiments developer documentation SP-API experiments"; "Amazon MYE experiment results data export API third-party integration"; extended "SP-API experiments endpoint listing A/B test create experiment github".
+Opened: developer-docs.amazon/sp-api/docs/sp-api-models (full, after redirect), github amzn/selling-partner-api-models/models, sell.amazon.com/blog/manage-your-experiments, sell.amazon.com/tools/manage-your-experiments, sellerlabs MYE guide.
+Unopened (snippet only): ecomcrew, gorillaroi, helium10, sellersprite, amalytix MYE guides and Seller Forums post (duplicate-origin UI descriptions); Alexa A/B Testing API (off-target); Optimizely/AWS pages (off-target).
+Saved answer: claude-log/answers/2026-10-21-mye-api.md
