@@ -238,3 +238,4 @@ Saved answer updated: claude-log/answers/2026-10-21-harness-spec.md
 
 ## 2026-10-21 T6 and /goal question
 Queries: none. Opened: CLAUDE.md (full, 451 lines), code.claude.com/docs/en/goal (full). Unopened: ~/.claude/stop-hook-git-check.sh (platform hook, outside the repo, not needed for the proposal). Saved answer: claude-log/answers/2026-10-21-rules-to-drop.md
+2026-10-21 | memory-tier step 0 | queries: "Claude Code worktree CLAUDE_PROJECT_DIR hook ...", "Claude Code CLAUDE_CODE_DISABLE_AUTO_MEMORY environment variable" | opened: code.claude.com/docs/en/hooks (first 100k/270k chars), /docs/en/memory | unopened: claudeissues.com 36656, 36360, 87890, mintlify env-var mirror (snippets only) | answer: answers/2026-10-21-memory-tier-plan.md

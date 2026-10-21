@@ -38,3 +38,11 @@ Do step 0, then 1-3 now (single-session value, low risk, testable). Hold 4-7 unt
 
 ## Correction (same day, user asked for my opinion)
 Step 2 duplicates STATE.md, which already holds Now/Next/Blockers/Recently done. Replace "new HANDOFF.md" with "session-start.sh prints STATE.md and the Stop nudge checks STATE.md changed". Step 1 only matters if parallel worktrees are used; assumed not (user said "idk"). Recommended order: step 0, then step 6 (shrink CLAUDE.md), then 2-3 on STATE.md.
+
+## Step 0 results (2026-10-21; official docs opened, hooks page first 100k of ~270k chars only)
+- $CLAUDE_PROJECT_DIR stays at the session-start project root inside a worktree: VERIFIED (code.claude.com/docs/en/hooks). Conflict: claudeissues.com reports 36656/36360 say it resolves to the worktree (snippet only; the 87890 report agrees with the docs). Hook input `cwd` = worktree root after entering one: VERIFIED. Step 1 stands for parallel use.
+- PreCompact, PostCompact, WorktreeCreate, WorktreeRemove events exist: VERIFIED (hooks page).
+- .claude/rules/*.md without `paths` frontmatter load at launch like CLAUDE.md: VERIFIED (code.claude.com/docs/en/memory). So splitting CLAUDE.md into rules saves nothing unless a rule is path-scoped; this repo's rules are not file-path rules. Step 6 as written is DROPPED. Official size guidance: under 200 lines per CLAUDE.md (ours 431); move procedures to skills.
+- Auto memory switch: documented setting is `autoMemoryEnabled: false` in settings (memory page). CLAUDE_CODE_DISABLE_AUTO_MEMORY appears only in third-party mirrors: UNVERIFIED. Step 7 uses the setting.
+- "v2.1.218 enforces worktree boundaries": not checked, not needed.
+- Revised order: trim CLAUDE.md toward 200 lines by moving procedures into skills or dropping rules (needs your approval per rule), then STATE.md hook change; worktree hook fix only if parallel.
