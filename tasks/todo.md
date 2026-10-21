@@ -77,9 +77,9 @@
 ## T7: Apply approved CLAUDE.md edit (gated by your approval)
 **Description:** Delete only the rules you approve from T6.
 **Acceptance criteria:**
-- [ ] Only approved rules removed; no other line changed (`git diff` shown)
+- [x] Only approved rules removed; no other line changed (`git diff` shown)
 **Verification:**
-- [ ] `wc -l CLAUDE.md` matches T6; no dangling references (`grep` for removed rule names)
+- [x] `wc -l CLAUDE.md` matches T6; no dangling references (`grep` for removed rule names)
 **Dependencies:** T6, your approval
 **Files likely touched:** `CLAUDE.md`
 **Estimated scope:** XS

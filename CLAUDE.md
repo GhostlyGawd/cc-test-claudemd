@@ -76,9 +76,6 @@
 22. When you read only part of a source (snippet, abstract, first pages), say so, and point to where in the source each key claim appears.
     Why: A partial read presented as a full one lets the user trust a summary that was never checked against the whole.
 
-23. End every research answer with the queries run and the pages left unopened.
-    Why: I can't judge coverage without seeing what was skipped.
-
 ## Research: coverage of claims
 
 - Open the page behind every claim that appears in your conclusions. A claim seen only in a search snippet goes in the answer as "snippet only", never as a finding.
@@ -98,9 +95,6 @@
 
 - After writing any file, re-read it and confirm the content before saying it was saved.
   Why: a write that returns no error can still be wrong or empty.
-
-- End every research answer with a "Gaps" section: claims resting on unopened sources, abstract-only reads, and the reason you stopped.
-  Why: it shows the weak spots without making you ask.
 
 
 -----
@@ -153,8 +147,6 @@ When a file passes 150 lines, merge duplicates and move superseded lines to `cla
   Why: failed saves get reported as done.
 - Open full pages for research claims; tag snippet-only sources "unverified".
   Why: snippets get reported as verified research.
-- End with "Not checked:" listing unverified items, including checks that couldn't run; write "Not checked: nothing" only if all ran.
-  Why: silent gaps look like completed work.
 
 ------
 
@@ -232,10 +224,6 @@ Files:
 10. Before ending a session, list the remaining `open` entries and mark any that are resolved.
     Why: stale `open` entries make the next session's check useless.
 
-### Closing check
-11. End every research answer with one line: "Log check: entries added N, statuses changed N, read-back done yes/no, coverage record updated yes/no." If any answer is no, fix it before sending.
-    Why: it makes a skipped step visible in the answer itself.
-
 ## Rule maintenance
 
 12. When I point out a miss, or you find one in your own work, name which case it is: a rule that exists but was skipped, a missing rule, or two rules that conflict.
@@ -281,9 +269,6 @@ Files:
 9. When I ask whether something is saved, check git and answer in one line. If the unsaved work falls under rules 1 and 2, fix it first, then report. Don't ask me to choose among options for a rule that already exists.
    Why: offering a menu for a standing rule costs me a round.
 
-10. End every task with: "Saved: files written N, committed yes/no, pushed yes/no, outside the repo: none or the list."
-    Why: it makes unsaved work visible in the answer itself.
-
 ------
 
 ------
@@ -302,14 +287,11 @@ Files:
 4. Keep one copy of every log file, inside the repo. When you move a file into the repo, delete the original, or tell me why you kept it.
    Why: two copies drift apart and nobody knows which is current.
 
-5. Add this to the closing line: "Synced with origin: yes/no. CLAUDE.md in this session matches origin: yes/no."
-   Why: it shows a stale session in the answer itself.
-
 -----
 
 ## Chat answers: what goes where
 
-1. Open with the answer in one or two plain sentences, then the reasoning. Never open by recapping what you did or which file you read.
+1. After the "You asked:" line, open with the answer in one or two plain sentences, then the reasoning. Never open by recapping what you did or which file you read.
    Why: I need the conclusion first, and process comes second.
 
 2. Between tool calls, write at most one short line, and only when something changes the plan. No running commentary.
@@ -409,7 +391,7 @@ Goal anchor
 1. The goal lives in one place: the first line of STATE.md, written as "Goal (user's words, date): ...". Copy my words. Don't paraphrase them.
    Why: a paraphrase slowly becomes a different goal.
 
-2. At the start of every task, say in one line: "Goal: [goal]. This task: [what you're about to do]. How it serves the goal: [reason]." If you can't connect the task to the goal, stop and ask me.
+2. At the start of a new task, make the second line of the reply (after the "You asked:" line) this one line: "Goal: [goal]. This task: [what you're about to do]. How it serves the goal: [reason]." If you can't connect the task to the goal, stop and ask me.
    Why: it makes drift visible before work happens.
 
 3. Before finishing, compare the result to the goal and write one line: "Matches goal: yes/no, because [reason]." If no, say what's missing instead of presenting it as done.
