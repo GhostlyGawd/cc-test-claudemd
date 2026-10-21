@@ -31,7 +31,7 @@ T1 install H1+H3 ──► T2 miss log ──► T3 H4 session-start ──► T
 - [ ] Both scripts pass `bash -n`; settings.json passes `jq -e`; pipe-tests quoted; you review before T3
 ### Phase 2: Session start and format
 - [x] T3: Add H4 (session-start context)
-- [ ] T4: Add H2 (answer-format check), only after you decide the short-reply exemption
+- [x] T4: Add H2 (answer-format check), only after you decide the short-reply exemption
 ### Checkpoint B (after T3-T4)
 - [ ] Live test T5 passes before anything goes to `main`
 ### Phase 3: Prove and prune

@@ -41,10 +41,10 @@
 ## T4: H2 answer-format check (gated)
 **Description:** After the exemption decision, a Stop check that blocks once when `last_assistant_message` does not start with "You asked:" or end with "Saved and pushed:".
 **Acceptance criteria:**
-- [ ] Compliant message passes; missing first line blocks; missing last line blocks; exempt short replies pass
-- [ ] One miss-log line per block
+- [x] Compliant message passes; missing first line blocks; missing last line blocks; exempt short replies pass
+- [x] One miss-log line per block
 **Verification:**
-- [ ] Four pipe-tests with real output quoted
+- [x] Four pipe-tests with real output quoted
 **Dependencies:** T2, your answer to open question 1
 **Files likely touched:** `.claude/hooks/stop-check.sh`
 **Estimated scope:** XS (1 file)
