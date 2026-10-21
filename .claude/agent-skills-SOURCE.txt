@@ -1,0 +1,1 @@
+Copied from https://github.com/addyosmani/agent-skills (MIT, commit aeac41d, plugin v0.6.13). See agent-skills-LICENSE.
