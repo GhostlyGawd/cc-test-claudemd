@@ -76,3 +76,4 @@
 2026-10-19 | question | Apply harness-audit edits H-001..H-007 to CLAUDE.md? needs user say-so | rule 13 | closed (user said Apply, 2026-10-19)
 2026-10-19 | decision | Applied H-001..H-005, H-007, H-008 to CLAUDE.md (480 -> 451 lines); H-006 (merge overlapping research rules) not applied, needs wording judgment | git diff on branch | open
 2026-10-21 | decision | Interview-me intent confirmed by user: fewer rules + hooks, hook-verified result per task, miss log auto-updates, CLAUDE.md/hook edits proposed for approval (rule 13), only Acadia out of scope; user said Yes to recommended next step (merge audit branch first, then spec) | in-session interview | open
+2026-10-21 | decision | Wrote harness spec (4 hooks H1-H4, miss log, 4 open questions); awaiting user approval before any plan or install | answers/2026-10-21-harness-spec.md | open
