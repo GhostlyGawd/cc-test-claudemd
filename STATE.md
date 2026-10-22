@@ -16,7 +16,7 @@ Verify:
 - `git status --short` is empty after the push
 
 Recently done:
-- Pressure-test plan (2026-10-21, one-off, not the goal): scope all 138 rules; tasks 1-3 done, awaiting your OK on cost at checkpoint A (tasks/plan-pressure-test.md)
+- Pressure-test plan (2026-10-21, one-off, not the goal): scope all 138 rules; tasks 1-4 and 6 (5-rule pilot) done, awaiting your go-ahead for the full run (tasks/pressure-test/pilot-report.md)
 - Harness update (2026-10-21, one-off, not the goal): 4 hooks live, miss log, CLAUDE.md 451 -> 433 lines, all on main (answers/2026-10-21-harness-spec.md, ...-rules-to-drop.md)
 - How workflows work: patterns, tool-use loop, Claude Code dynamic workflows, tested skeleton (answers/2026-10-19-how-workflows-work.md)
 

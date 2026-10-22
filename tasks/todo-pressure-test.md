@@ -30,12 +30,12 @@ Order follows risk: the cheapest check of the riskiest assumption comes first.
 
 ## Task 4: Track H check
 **Description:** For each hook-checkable rule, confirm a hook test exists; list rules with no test; count hook blocks per rule in the miss log.
-- [ ] `bash tests/hooks/run.sh` output quoted, all pass
-- [ ] A list of track H rules with no hook or no test
+- [x] `bash tests/hooks/run.sh` output: passed 47, failed 0 (2026-10-22)
+- [x] Track H rules with no hook or test: 17 of 24 (list in `tasks/pressure-test/track-h.md`)
 **Verification:** quote the real run output.
 **Dependencies:** 3. **Files:** `tasks/pressure-test/track-h.md`. **Scope:** S.
 
-## Task 5: Scenario prompts for track G
+## Task 5: Scenario prompts for track G (pilot scenarios done; rest waits for checkpoint B)
 **Description:** One prompt per rule cluster, with the rule ids it should trigger and the observable pass or fail.
 - [ ] Every track G rule appears in at least one scenario
 - [ ] Each scenario states what a "followed" and a "skipped" reply look like
@@ -44,14 +44,15 @@ Order follows risk: the cheapest check of the riskiest assumption comes first.
 
 ## Task 6: Runner and grader, pilot on 5 rules
 **Description:** A script that runs a scenario with a chosen CLAUDE.md variant N times, and a grader prompt. Pilot on 5 rules.
-- [ ] Grader matches 9 of 10 hand-labeled transcripts
-- [ ] Script run quoted end to end, with the cost of the pilot
+- [x] Grader matches hand labels on 11 of 12 transcripts
+- [x] Pilot run end to end: 24 runs, 42 grades; usage in `tasks/pressure-test/pilot-report.md`
+- Deviation: scenarios were written for the 5 pilot rules only; Task 5 for the other track G rules waits for checkpoint B, so no effort is spent if the pilot shows the method fails.
 **Verification:** quote the script output and the agreement count.
 **Dependencies:** 1, 5. **Files:** `tasks/pressure-test/run.sh`, `tasks/pressure-test/grader.md`. **Scope:** M.
 
 ### Checkpoint B: after tasks 4-6
-- [ ] Pilot cost and variance shown; you decide whether to run the full pass
-- [ ] If 3 runs give inconsistent scores on the pilot, raise runs per cell before continuing
+- [x] Pilot cost and variance shown (pilot-report.md); you decide whether to run the full pass
+- [ ] 3 runs per cell gave 2-of-3 results on the pilot: raise to 5 runs per cell for the full pass (decision needed)
 
 ## Task 7: Full ablation run (per section, one section per step)
 **Description:** Run with-line then without-line for rules that were followed; record results as they finish.
