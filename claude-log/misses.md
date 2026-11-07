@@ -7,3 +7,4 @@
 2026-10-21 | miss | H1 | turn ended with uncommitted changes | claude/harness-friction-plan-2026-10-21 | open
 2026-10-21 | miss | H1 | turn ended with uncommitted changes | claude/harness-friction-plan-2026-10-21 | open
 2026-10-21 | miss | H1 | turn ended with uncommitted changes | claude/harness-friction-plan-2026-10-21 | open
+2026-11-07 | miss | H1 | turn ended with uncommitted changes | claude/pressure-test-plan-2026-10-21 | open
