@@ -132,3 +132,5 @@
 2026-10-22 | fact | Grader agreed with my hand labels on 11 of 12 pilot transcripts | pilot-report.md | closed
 2026-10-22 | decision | Wrote scenarios only for the 5 pilot rules before the pilot, not all 106, so no effort is wasted if the method fails; the rest wait for user approval at checkpoint B | tasks/todo-pressure-test.md Task 5 | open
 2026-10-22 | fact | A clean test repo can understate rules written to counter context (R120's original failure came from a session-start hook, which the fixture lacks); a redundant verdict means redundant in a clean session only | pilot-report.md limit 2 | open
+2026-11-07 | decision | Full pressure-test pass approved by user; 5 runs per cell; phase 1 = 38 scenarios x 5 full-file runs, phase 2 = remove one rule at a time for rules followed in phase 1 | user said Yes | open
+2026-11-07 | fact | Test fixture lacks session-start hook output and earlier conversation, so scenarios for rules that need prior turns or session state (R096 upstream change, R131 goal match, R072 correction) test a single-turn stand-in; verdicts on them are weaker | scenarios.tsv, run.sh setups | open

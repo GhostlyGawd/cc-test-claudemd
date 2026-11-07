@@ -35,7 +35,7 @@ Order follows risk: the cheapest check of the riskiest assumption comes first.
 **Verification:** quote the real run output.
 **Dependencies:** 3. **Files:** `tasks/pressure-test/track-h.md`. **Scope:** S.
 
-## Task 5: Scenario prompts for track G (pilot scenarios done; rest waits for checkpoint B)
+## Task 5: Scenario prompts for track G (done 2026-11-07: 38 scenarios in tasks/pressure-test/scenarios.tsv cover all 106 rules)
 **Description:** One prompt per rule cluster, with the rule ids it should trigger and the observable pass or fail.
 - [ ] Every track G rule appears in at least one scenario
 - [ ] Each scenario states what a "followed" and a "skipped" reply look like
@@ -52,7 +52,7 @@ Order follows risk: the cheapest check of the riskiest assumption comes first.
 
 ### Checkpoint B: after tasks 4-6
 - [x] Pilot cost and variance shown (pilot-report.md); you decide whether to run the full pass
-- [ ] 3 runs per cell gave 2-of-3 results on the pilot: raise to 5 runs per cell for the full pass (decision needed)
+- [x] User approved the full pass 2026-11-07; 5 runs per cell
 
 ## Task 7: Full ablation run (per section, one section per step)
 **Description:** Run with-line then without-line for rules that were followed; record results as they finish.
