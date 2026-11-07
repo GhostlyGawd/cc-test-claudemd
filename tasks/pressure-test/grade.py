@@ -28,6 +28,6 @@ def grade(j):
     except Exception as e:
         v = {'verdict': 'grader_error', 'evidence': str(e)[:80]}
     return [sid, var, run, rule, v['verdict'], v['evidence'].replace('\t', ' ').replace('\n', ' '), str(s['out_tokens']), str(s['in_tokens'])]
-with ThreadPoolExecutor(6) as ex: res = list(ex.map(grade, jobs))
+with ThreadPoolExecutor(8) as ex: res = list(ex.map(grade, jobs))
 open(out, 'w').write('sid\tvariant\trun\trule\tverdict\tevidence\tout_tokens\tin_tokens\n' + '\n'.join('\t'.join(r) for r in res) + '\n')
 print(len(res), 'graded')
